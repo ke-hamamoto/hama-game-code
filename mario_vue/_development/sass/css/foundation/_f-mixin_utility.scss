@@ -1,0 +1,115 @@
+@mixin clearFix() {
+  &::after{
+    content:"";
+    display:block;
+    clear:both;
+  }
+}
+
+@mixin marginRL {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+/**
+元画像のアスペクト比を維持したまま背景画像をリサイズして表示させる
+@param {$img} 画像のurl
+@param {$img-w} 画像の横幅（px単位付きで指定）
+@param {$img-h} 画像の高さ（px単位付きで指定）
+@param {$disp-w} [100%] 表示したい画像のサイズ
+@note 特になし
+*/
+@mixin imgResizeRatio($img, $img-w, $img-h, $disp-w:100%){
+  width: $disp-w;
+  height: auto;
+  padding-top: $img-h / $img-w * $disp-w;
+  background-image: url($img);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100%;
+}
+
+//コンテンツレイヤーの幅を設定（最大幅）
+@mixin contentWidth-max{
+  width: 100%; 
+  //margin:0 auto;
+  margin-right:auto;
+  margin-left:auto;
+  @include media(md){
+    width: $g_width-content;
+  }
+}
+
+//コンテンツレイヤーの幅を設定（記事エリア）
+@mixin contentWidth-article{
+  width: 100%; 
+  //margin:0 auto;
+  margin-right:auto;
+  margin-left:auto;
+  @include media(md){
+    width: $g_width-article;
+  }
+}
+
+//天地左右に中央配置
+//親要素の幅・高さに対して子要素を天地左右に中央配置するmixin。親要素の高さ指定を忘れずに。
+@mixin center{
+  text-align: center;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+@mixin center-vertical{
+  position: relative;     //★★★positionがabsoluteの場合も考慮が必要
+  display: inline-block;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin center-horizon{
+  position: relative;
+  //display: inline-block;
+  display: block;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/**
+横並びアイテムの左右マージンを調整したwidthを設定
+@param {$col} アイテムのカラム数
+@param {$margin} 左右のマージン（px単位付きで指定）
+@note 特になし
+*/
+@mixin getWidthAdjustedMargin($col, $margin){
+  //エラーの原因？？
+  //（ line undefined, col undefined, Error - Fatal error, cannot continue: Cannot read property 'text' of null (undefined)）
+  width: calc((100% - (#{$margin} * ( (#{$col} * 2) - 2))) / #{$col});
+  margin-right: $margin;
+  margin-left: $margin;
+  &:nth-child(#{$col}n){
+    margin-right: 0;
+  }
+  &:nth-child(#{$col}n+1){
+    margin-left: 0;
+  }
+}
+
+
+/**
+「.u-icon」クラスで表示する疑似要素のアイコン設定
+@param {$color} アイコン色
+@param {$fz} アイコンのフォントサイズ
+@note 特になし
+*/
+@mixin setIconinfo($color, $fz, $text:""){
+  &.u-icon{
+    &::before {
+      color: $color;
+      font-size: $fz;
+      @if($text != "" and $text != null){content: "#{$text}";}
+    }
+  }
+}

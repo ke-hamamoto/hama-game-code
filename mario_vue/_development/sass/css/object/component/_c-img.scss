@@ -1,0 +1,48 @@
+.c-img{
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    @include media(md){
+        max-width: $g_width-img;
+    }
+    // &--article{
+    //   padding-bottom: 32px;
+    // }
+    &--right{
+       margin-right: 0;
+    }
+    &--left{
+      margin-left: 0;
+    }
+    &--max{
+        @include media(md){
+            max-width: none;
+        }
+    }
+    img{
+       width: 100%;
+    }
+
+    //文章中の画像
+    &--article{
+        margin-top: getSysMargin(md);
+        @include media(md){
+            margin-top: getSysMargin(lg);
+        }
+    }
+
+ }
+
+.c-caption{
+    padding-top: 8px;
+//    padding-bottom: 8px;
+    text-align: center;
+    line-height: 1.4;
+    &--right{
+        text-align: right;
+    }
+    &--left{
+        text-align: left;
+    }
+}
+

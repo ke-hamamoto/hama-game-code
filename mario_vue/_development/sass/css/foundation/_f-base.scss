@@ -1,0 +1,161 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html {
+  // @include _mq-up() {
+  //   font-size: map-get($_font-size, md);
+  // } 
+}
+
+body {
+  //@include contentMinWidth;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  //font-family: inherit;
+  //font-weight: getFontWeight(bold);
+  //color: inherit;
+  font-weight: bold;
+  line-height: 1.4;
+}
+h1 {
+  //font-size: fz(32);
+}
+h2 {
+  //font-size: fz(28);
+}
+h3 {
+  //font-size: fz(24);
+}
+h4 {
+  //font-size: fz(20);
+}
+h5 {
+  //font-size: fz(18);
+}
+h6 {
+  //font-size: fz(16);
+}
+
+p{
+  //font-size: fz(16);
+  line-height: 1.6;
+}
+
+
+/**
+ * フルードイメージ
+ */
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+/**
+ * IEでSVGがフルードイメージにならない不具合があります。
+ * 属性値が`.svg`で終わる要素に適応します。
+ */
+// [src$=".svg"],
+// [data$=".svg"] {
+//   width: 100%;
+// }
+
+
+// ---------------------
+// アプリバナー（SP）
+// ---------------------
+#appsbanner {
+    z-index: 4;
+    position: relative;
+}
+
+// ---------------------
+// infoバナー
+// ---------------------
+.banners{
+    width: 96%;
+    @include marginRL;
+
+    @include media(md){
+        width: 640px;
+    }
+    & > article:first-child{
+        padding-top: 8px;
+    }
+    .inner{
+        background-color: #fff;
+    }
+    .module{
+        &:last-child{
+            padding-bottom: 8px;
+        }
+
+        // バナーがない場合は余白を付けない
+        &:empty {
+            padding: 0;
+        }
+    }
+    .module--tv-news,
+    .module--tv-news-osaka,
+    .module--just-in,
+    .module--realtime-news {
+        padding-top: 8px;
+        padding-bottom: 0px;
+    }
+}
+
+
+// ---------------------
+// スマホ or PC 表示・非表示切り替え
+// ---------------------
+.sp_on{
+    display: block;
+    @include media(md){
+        display: none;
+    }
+}
+.pc_on{
+    display: none;
+    @include media(md){
+        display: block;
+    }
+}
+
+
+#pagetop {
+    z-index: 2;
+    @include media(sm){
+        position: fixed;
+        right: 0px;
+        bottom: 12px;
+    }
+}
+
+
+.f-back-home{
+    position: fixed;
+    right: 0px;
+    bottom: 56px;
+    width: 32px;
+    height: 32px;
+    background: #000 url('../images/ico-link_home.png') no-repeat center center/20px;
+    z-index: 2;
+    opacity: 0;
+
+    @include media(md){
+        bottom: 99px;
+    }
+    a{
+        display: block;
+        width: 100%;
+        height: 100%;
+        text-indent: -1234px;
+        overflow: hidden;
+    }
+}
+
+

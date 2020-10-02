@@ -1,0 +1,154 @@
+.u-link{
+    color: getColor(link);
+    &:visited {
+        color: getColor(link-visited);
+    }
+    &:hover {
+        text-decoration: underline;
+        color: getColor(link-hover);
+    }
+
+    //訪問済みリンクの色変更をさせない
+    &--noState{
+        &:visited {
+            color: getColor(link);
+        }
+    }
+    
+    &--noDecoration:hover{
+        text-decoration: none;
+
+        //「.u-link--noDecoration」の一部の小要素のみアンダーラインを表示
+        @at-root{
+            & .u-link--decoration {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.u-fa-bg{
+    position: relative;
+    &--caret{
+        padding-right: 12px;
+        &::before{
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            font-family: "Font Awesome 5 Free";
+            content: "";
+            -webkit-font-smoothing: antialiased;
+            font-style: normal;
+            font-variant: normal;
+            text-rendering: auto;
+            line-height: 1;
+            font-weight: bold;
+            font-size: 17px;
+
+            @include media(md) {
+                font-size: 16px;
+            }
+        }
+    }
+}
+/* Edge(EdgeHTML) & IE11 & IE10 */
+_:-ms-lang(x), .u-fa-bg--caret{
+    &::before{
+        @include media(md) {
+            font-size: 21px;
+        }
+    }
+}
+
+
+//親要素全体にクリッカブル領域を広げる(親要素が高さと幅を持っている場合)
+.u-clickable{
+    position: relative;
+    display: block;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+}
+
+//親要素全体にクリッカブル領域を広げる(親要素が高さと幅を持っていない場合)
+//注意：親要素が「position: relative;」となっていること
+.u-clickable--abs{
+    position: absolute;
+    display: block;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+}
+
+.u-externalLink span {
+    padding: 4px 22px 4px 0px;
+    background: url(../images/ico-window.png) no-repeat right 2px/15px;
+    text-decoration: underline;
+}
+
+//------------------------------
+//ホバー時にエフェクト Start
+//------------------------------
+%hover-base {
+    position: relative;
+    display: block;
+    &::after{
+        content: "";
+        position: absolute;
+        display: block;
+        top:0;
+        left:0;
+        width: 100%;
+        height: 100%;
+        @include transition-nomal();
+    }
+}
+.u-hover{
+    &--white{
+        @extend %hover-base;
+        &:hover{
+            &::after{
+                background-color: rgba(getColor(base-white), .2);
+            }
+        }
+    }
+    &--blue{
+        @extend %hover-base;
+        &:hover{
+            &::after{
+              background-color: rgba(getColor(accent-blue-01), .4);
+            }
+        }
+    }
+    &--gray{
+        @extend %hover-base;
+        &:hover{
+            &::after{
+              background-color: rgba(getColor(accent-gray), .2);
+            }
+        }
+    }
+    &--custom{
+        @extend %hover-base;
+        .fas{
+            color: getColor(main-01);
+            @include transition-nomal();
+        }
+        &:hover{
+            background-color: rgba(getColor(main-01), 1);
+            .fas{
+                color: getColor(text-base);
+                @include transition-nomal();
+            }
+        }
+//        .c-button__label{
+//            color: getColor();
+//        }
+    }
+}
+//------------------------------
+//ホバー時にエフェクト End
+//------------------------------
+

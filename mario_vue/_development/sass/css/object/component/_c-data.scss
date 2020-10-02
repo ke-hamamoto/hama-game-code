@@ -1,0 +1,40 @@
+.c-data{
+    padding: 0 getSysMargin(sm);
+
+    //枠線付き
+    &--outline{
+        margin-top: getSysMargin(sm);
+        padding: getSysMargin(sm);
+        border: 2px solid getColor(accent-gray);
+
+        @include media(md){
+          margin-top: getSysMargin(md);
+          padding: getSysMargin(md);
+        }
+
+        &-blue{
+          border-color: getColor(accent-blue-02);
+        }
+
+        .c-data__title:nth-of-type(1){
+          margin-top: 0;
+        }
+    }
+
+    &__title{
+        margin-top: getSysMargin(sm);
+        font-size: fz(18);
+        font-weight: bold;
+        line-height: 1.6;
+    }
+    &__item{
+        margin-top: getSysMargin(xs);
+        padding-left: 0.6em;
+        font-size: fz(16);
+        line-height: 1.6;
+        @include media(md){
+          padding-left: 1em;
+        }
+    }
+}
+

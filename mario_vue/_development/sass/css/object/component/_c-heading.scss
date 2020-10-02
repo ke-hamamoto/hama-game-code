@@ -1,0 +1,164 @@
+/* --------------------
+heading
+-------------------- */
+.c-heading-01{
+    margin: getSysMargin(xl) auto getSysMargin(md);
+    font-size: fz(25);
+    font-weight: bold;
+    line-height: 1.4;
+    text-align: center;
+    @include media(md){
+        margin: getSysMargin(xl) auto getSysMargin(lg);
+        font-size: fz(32);
+    }
+    &.en {
+        font-size: fz(40);
+        font-family: 'DIN Condensed', 'arial narrow';
+        padding-bottom: 4px;
+        @include media(md){
+            padding-bottom: 12px;
+        }
+    }
+    &--line{
+        position: relative;
+        padding-bottom: 16px;
+        @include media(md){
+            padding-bottom: 24px;
+        }
+        &::after{
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 32px;
+            height: 4px;
+            transform: translate(-50%);
+            background-color: getColor(main-01);
+        }
+    }
+}
+
+.c-heading-02{
+    margin-top: getSysMargin(lg);
+//    padding: getSysMargin(xs) 0;
+    font-size: fz(24);
+    @include media(md){
+        margin-top: getSysMargin(xl);
+    }
+    &--line{
+        padding-bottom: getSysMargin(xs);
+        border-bottom: 2px solid getColor(accent-gray);
+    }
+}
+.c-heading-03{
+    margin-top: getSysMargin(xxl);
+    padding: 8px 12px;
+    font-size: fz(20);
+    color: getColor(base-white);
+    background-color: getColor(main-01);
+    @include media(md){
+        margin-top: 64px;
+        padding: getSysMargin(sm);
+    }
+}
+.c-heading-04{
+    margin-top: getSysMargin(lg);
+    font-size: fz(20);
+    line-height: 1.4;
+    font-weight: bold;
+    @include media(md){
+        margin-top: getSysMargin(xxl);
+    }
+    &--line{
+        padding-bottom: getSysMargin(xs);
+        border-bottom: 1px solid getColor(accent-gray);
+    }
+    &--line-left{
+        padding: 8px 8px 8px 12px;
+        border-left: 6px solid getColor(main-01);
+        @include media(md){
+            margin-top: getSysMargin(xxl);
+            padding: 6px 8px 6px 12px;
+        }
+    }
+}
+.c-heading-05{
+    margin-top: getSysMargin(lg);
+    font-size: fz(18);
+    font-weight: bold;
+    @include media(md){
+        margin-top: getSysMargin(xxl);
+    }
+    &--line{
+        padding-bottom: getSysMargin(xs);
+        border-bottom: 1px solid getColor(accent-gray);
+    }
+}
+.c-heading-05 + .c-text {
+    margin-top: getSysMargin(lg);
+    @include media(md){
+        margin-top: getSysMargin(sm);
+    }
+}
+.c-heading-06{
+    margin-top: getSysMargin(xxl);
+    padding: 10px 14px;
+    font-size: fz(21);
+    color: getColor(base-white);
+    background-color: #e7a600;
+    @include media(md){
+        margin-top: 64px;
+        padding: getSysMargin(sm);
+    }
+}
+
+.c-heading-07{
+    padding: 20px 0px;
+    font-size: fz(27);
+    font-weight: bold;
+    color: getColor(base-white);
+    background-color: getColor(main-01);
+    text-align: center;
+    @include media(sm){
+        font-size: fz(23);
+        padding: getSysMargin(xs);
+    }
+}
+
+//.c-heading-onair{
+//        width: 150px;
+//        padding-bottom: 10px;
+//        margin: 0 auto;
+//        font-size: fz(20);
+//        border-bottom: 2px solid getColor(accent-gray);
+//}
+.c-heading-onair,
+.c-heading-infectionStatus{
+    margin: getSysMargin(md) auto 16px;
+    font-size: fz(28);
+    font-weight: bold;
+    line-height: 1.4;
+    text-align: center;
+    @include media(md){
+        margin: getSysMargin(md) auto 16px;
+    }
+    &--line{
+        position: relative;
+        padding-bottom: 16px;
+        @include media(md){
+            padding-bottom: 8px;
+        }
+        &::after{
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 100%;
+            height: 2px;
+            transform: translate(-50%);
+            background-color: getColor(accent-gray);
+        }
+    }
+}

@@ -1,0 +1,33 @@
+//----------------------------------------
+//記事コンテンツ Start
+//----------------------------------------
+
+
+//
+.c-article{
+    &__dropdown{
+        display: none;
+    }
+    &__qa{
+        margin-top: calc(32px - 0.3em);
+        font-size: fz(16);
+        @include media(md){
+            margin-top: calc(64px - 0.3em);
+        }
+        .question{
+            font-weight: bold;
+            text-align: left;
+            line-height: 1.6;
+        }
+        .answer{
+            width: 100%;
+            margin-top: calc(28px - 0.3em);
+            line-height: 1.6;
+        }
+        a {
+            padding: 4px 22px 4px 0px;
+            background: url(../images/ico-window.png) no-repeat right 2px/15px;
+            text-decoration: underline;
+        }
+    }
+}

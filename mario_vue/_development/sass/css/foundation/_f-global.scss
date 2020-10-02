@@ -1,0 +1,77 @@
+//------------------------------------------------------------
+//・汎用的なmarginは「_u-margin.scss」にて定義
+//・汎用的なpaddingは「_u-padding」にて定義
+//------------------------------------------------------------
+
+// コンテンツ幅
+$g_width-content: 960px !default; //1カラムの場合のメイン
+//$g_width-content: 1280px !default; //1カラムの場合のメイン
+$g_width-mv     : 1280px !default; //メインビジュアル
+$g_width-mv-sub     : 960px !default; //メインビジュアル
+$g_width-main   : 924px !default; //2カラムの場合のメイン
+$g_width-side   : 356px !default; //2カラムの場合のサイドバー
+$g_width-img    : 640px !default; //画像・動画サイズの最大幅
+$g_width-article: 720px !default; //記事エリアの最大幅[20200129]
+//$g_width-article: 640px !default; //記事エリアの最大幅
+
+
+//グリッドのカラム数
+$g_column-grid: 12 !default;
+
+
+
+
+//---------------------------------
+//z-indexのを制御する（手前に表示したいものは後ろに記述する）
+//---------------------------------
+$g_z-map-reverse: false !default;
+$g_z-map: (
+  site_main: true,
+   mv_wrap: (
+    slideshow_img: true,
+    slideshow_text: true
+   ),
+  site_header: true,
+  site_side: true,
+  site_footer: true,
+  menu: true,
+  modal: (
+    button: true,
+    images: (
+      mask: true,
+      body: true
+    ),
+    close: true
+  )
+) !default;
+
+//---------
+// 例）main_wrapクラスとmenu_wrapクラスにそれぞれz-indexを指定したい場合
+// 　　main_wrap：奥
+// 　　menu_wrap：手前
+//---------
+// .main_wrap{
+//     z-index: z(site_main);
+// }
+
+// .menu_wrap{
+//     z-index: z(menu);
+// }
+
+
+
+//角丸指定
+$g_radius-xs: 4px !default;
+$g_radius-sm: 8px !default;
+$g_radius-md: 16px !default;
+$g_radius-lg: 24px !default;
+$g_radius-xl: 32px !default;
+
+// base animation speed
+$g_duration: 0.3s !default;
+
+//ボックスシャドウ
+$g_bShadow-rb_s : 2px 2px 4px rgba(0,0,0,0.1);//ボックスシャドウ(右下)小
+$g_bShadow-rb_l : 2px 2px 4px rgba(0,0,0,0.3);//ボックスシャドウ(右下)大
+$g_bShadow-all_l : 0px 0px 4px rgba(0,0,0,0.3);//ボックスシャドウ(上下左右)大
+$g_bShadow-all_xl : 0px 0px 8px rgba(0,0,0,0.3);//ボックスシャドウ(上下左右)大2

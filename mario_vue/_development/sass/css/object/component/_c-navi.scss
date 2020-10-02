@@ -1,0 +1,77 @@
+
+//ローカルナビのカラム数
+$g_column-navi: 4 !default;
+
+.c-navi{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    width: 100%;
+    height: auto;
+    margin-right: auto;
+    margin-left: auto;
+    height: 60px;
+    &__item{
+        font-feature-settings: "palt";
+        position: relative;
+        width: calc(100% / #{$g_column-navi});
+        display: inline-block;
+        height: 100%;
+        min-height: 60px;
+        text-align: center;
+        @include transition-nomal();
+//        border-bottom: 4px solid transparent;
+        @include media(md){
+//            border-bottom-width: 6px;
+        }
+        &:hover{
+            background-color: getColor(gray-darken-5);
+            @include transition-nomal();
+        }
+        &.is-active{
+            background-color: getColor(main-01);
+//            border-bottom-color: getColor(main-01);
+            > a{
+                color:getColor(base-white);
+            }
+            &::after{
+                content: "";
+                display: block;
+                position: absolute;
+                bottom: 0px;
+                left: 50%;
+                margin-left: inherit;
+                width: 40px;
+                height: 4px;
+                border: none;
+                background-color: getColor(accent-01);
+                transform: translateX(-50%);
+            }
+        }
+        > a{
+            display: block;
+            padding: 4px;
+            height: 100%;
+            color: getColor(accent-blue-01);
+            font-weight: bold;
+            text-decoration: none;
+            @include media(md){
+              padding: getSysMargin(xs);
+            }
+            > span{
+                position: relative;
+                display: block;
+                top:50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                line-height: 1.4;
+                color: inherit;
+                font-size: fz(12);
+                font-weight: inherit;
+                @include media(md){
+                    font-size: fz(18);
+                }
+            }
+        }
+    }
+}

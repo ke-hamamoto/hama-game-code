@@ -1,0 +1,73 @@
+//--------------------------------------------------
+//汎用アイコンの定義
+//
+//アイコンの色とサイズは「@mixin setIconinfo($color, $fz)」にてカスタマイズ可能
+//--------------------------------------------------
+
+.u-icon{
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      //font-size: inherit;
+      line-height: 1;
+    }
+
+    //------------------------------
+    //レイアウトパターン
+    //------------------------------
+    //上寄せ
+    &--top{
+      &::before {
+        top: 0.2em;
+        transform: translateY(0);
+      }
+    }
+    //下寄せ
+    &--bottom{
+      &::before {
+        top: auto;
+        bottom: 0.2em;
+        transform: translateY(0);
+      }
+    }
+    //右寄せ
+    &--right{
+      &::before {right: 0;}
+    }
+    //左寄せ
+    &--left{
+      &::before {left: 0;}
+    }
+
+    //------------------------------
+    //アイコンのパターン
+    //------------------------------
+    //「▶」
+    &--triangle_01{
+        &::before {content: "\025b6";}
+    }
+    //「◀」
+    &--triangle_02{
+        &::before {content: "\025c0";}
+    }
+    //「▲」
+    &--triangle_03{
+        &::before {content: "\025b2";}
+    }
+    //「▼」
+    &--triangle_03{
+        &::before {content: "\025bc";}
+    }
+    //「≪」
+    &--db-bracket_01{
+        &::before {content: "\0226a";}
+    }
+    //「≫」
+    &--db-bracket_02{
+        &::before {content: "\0226b";}
+    }
+}
+
+

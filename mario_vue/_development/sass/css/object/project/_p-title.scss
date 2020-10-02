@@ -1,0 +1,30 @@
+.title-another{
+    &.c-mokuji__list li {
+        margin-left: 24px;
+        font-weight: 100;
+    }
+
+    &.c-mokuji__list li::before {
+        content: '';
+        width: 8px;
+        height: 8px;
+        border-top: solid 2px #333;
+        border-right: solid 2px #333;
+    }
+
+    &.c-mokuji__list li:nth-child(1),
+    &.c-mokuji__list li:nth-child(3),
+    &.c-mokuji__list li:nth-child(6) {
+        margin-left: 0;
+        font-weight: bold;
+    }
+
+    &.c-mokuji__list li:nth-child(1)::before,
+    &.c-mokuji__list li:nth-child(3)::before,
+    &.c-mokuji__list li:nth-child(6)::before {
+        width: 11px;
+        height: 11px;
+        border-top: solid 3px #4e738e;
+        border-right: solid 3px #4e738e;
+    }
+}

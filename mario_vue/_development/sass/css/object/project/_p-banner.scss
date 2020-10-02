@@ -1,0 +1,70 @@
+.p-button-pd{
+    padding:3px 16px;
+    @include media(md) {
+        padding:5px 16px;
+    }
+}
+
+.p-button--banner--width{
+    width:100%;
+    margin-right: auto;
+    margin-left: auto;
+    
+    @include media(md) {
+        width:768px;
+        height:auto;
+    }
+}
+
+.p-button--banner-shape{
+    border-radius: 8px;
+}
+
+
+.p-button--banner--fz{
+    font-size:22px;
+    line-height: 30px;
+    padding:10px;
+    position:relative;
+    width:100%;
+    text-decoration: none;
+    
+    .fa-chevron-right{
+        position:absolute;
+        right:0;
+        top:50%;
+        transform:translateY(-50%);
+    }
+    
+    @include media(md) {
+        font-size:30px;
+    }
+}
+
+.p-button--pc_hide{
+    display:none;
+    
+    @include media(md) {
+        font-size:30px;
+        display:block;
+    }
+    
+}
+
+.p-button--sp_hide{
+
+    @include media(md) {
+        display:none;
+    }
+
+}
+
+.p-button--message--sp{
+    font-size:28px;
+    line-height: 35px;
+}
+
+#p-button--hide-p{
+    padding-top:0;
+}
+

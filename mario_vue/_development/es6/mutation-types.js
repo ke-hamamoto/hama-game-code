@@ -1,0 +1,6 @@
+export const SET_GAMESTATE = "SET_GAMESTATE"
+export const SET_MARIOSTATE = "SET_MARIOSTATE"
+export const SET_CLIBOENV = "SET_CLIBOENV"
+export const PUSH_CLIBO = "PUSH_CLIBO"
+export const UPDATE_CLIBO = "UPDATE_CLIBO"
+export const UPDATE_MARIO = "UPDATE_MARIO"

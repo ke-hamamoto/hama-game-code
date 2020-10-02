@@ -1,0 +1,180 @@
+.p-chronology-01{
+
+    &__items{ // ul
+
+        border: 1px solid #ccc;
+        border-bottom: none;
+
+        &__item{ // li
+
+
+            border-bottom: 1px solid #ccc;
+
+            dl{
+                @include media(md){
+                    display: table;
+                }
+            }
+
+            dt{
+                background-color: getColor(accent-beige-01);
+                font-weight: bold;
+                padding: 12px 16px;
+                font-size: fz(16);
+                line-height: 1.8;
+                @include media(md){
+                    padding: 12px 24px;
+                    width: 275px;
+                    display: table-cell;
+                    vertical-align: top;
+                }
+            }
+
+            dd{
+
+                padding: 12px 16px 12px;
+                @include clearFix;
+                @include media(md){
+                    padding: 12px 24px;
+                    display: table-cell;
+                    position: relative;
+                    //padding-right: 272px; 画像を追加したらコメントアウトを解除する
+                }
+
+                figure{
+
+                    margin-bottom: 20px;
+                    @include media(md){
+                        margin-bottom: 0;
+                        width: 208px;
+                        position: absolute;
+                        top: 32px;
+                        right: 32px;
+
+                    }
+                    img{
+                        max-width: 100%;
+                    }
+                }
+
+                .commentary{
+
+                    @include media(md){
+                        float: right;
+                    }
+
+                    &_title{
+                        font-size: fz(18);
+                        font-weight: bold;
+                        line-height: 1.4;
+                    }
+                    &_text{
+                        font-size: fz(16);
+                        line-height: 1.6;
+                        margin:16px 0 0;
+                        @include media(md){
+
+                        }
+                    }
+                }
+
+            }
+            
+        } // &__item
+
+    } // &__items
+}
+
+
+
+
+
+
+//
+//パターン02
+//
+.p-chronology-02{
+    width: 100%;
+    th,td {
+        padding: 24px 16px;
+        vertical-align: middle;
+        font-size: fz(16);
+        line-height: 1.6;
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+    td{
+        &:nth-of-type(2){
+            font-weight: bold;
+        }
+        @include media(sm){
+            display: block;
+            width: 100%;
+            padding: 0px 16px;
+            border-bottom: none;
+            &:first-child{
+                padding-top: 20px;
+                padding-bottom: 4px;
+            }
+            &:last-child{
+                padding-top: 8px;
+                padding-bottom: 20px;
+                font-size: fz(14);
+                border-bottom: 1px solid rgba(0,0,0,0.1);
+            }
+        }
+        &.txt-red{
+            color: #c42138;
+            font-weight: bold;
+        }
+        &.year{
+            padding: 48px 16px 24px;
+            font-size: fz(24);
+            font-weight: bold;
+            line-height: 1;
+            border-bottom: 2px solid getColor(main-01);
+
+            @include media(sm){
+                padding: 48px 16px 20px;
+                font-size: fz(24);
+                border-bottom: 2px solid getColor(main-01);
+            }
+        }
+        span.sp-venue{
+            display: none;
+
+            @include media(sm){
+                display: inline-block;
+                margin-right: 12px;
+                padding: 0px 12px;
+                background-color: #efefef;
+            }
+        }
+    }
+
+    &__header{ //thead
+        @include media(sm){
+            display: none;
+        }
+        td{
+            width: calc(100% / 3);
+            padding: 16px 16px;
+            font-size: fz(14);
+            font-weight: bold;
+            background-color: #efefef;
+            border-bottom: none;
+        }
+        .date{
+            width: 30%;
+        }
+        .detail{
+            width: 40%;
+            border-left: 2px solid #fff;
+        }
+        .venue{
+            width: 30%;
+            border-left: 2px solid #fff;
+        }
+    }
+}
+
+

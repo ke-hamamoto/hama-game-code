@@ -1,0 +1,104 @@
+.p-card{
+    //候補者プロフィールのキービジュアル(TOPページ)
+    //候補者プロフィールのキービジュアル（候補者一覧ページ）
+    &--profileList-01,
+    &--profileList-02,
+    &--slider{
+        background-color: getColor(base-black);
+        .c-card__title{
+            // font-size: fz(16);
+            font-size: fz(22);
+            @include media(md){
+                font-size: fz(24);
+            }
+        }
+        .c-card__textBox{
+            color: getColor(base-white);
+        }
+        .c-card__text:hover{
+            text-decoration: none;
+        }
+    }
+
+    //候補者プロフィールのキービジュアル(TOPページ)
+    &--profileList-01{
+        @include media(md){
+            margin-top: 0;
+        }
+    }
+
+    //候補者プロフィールのカード（候補者一覧ページ）
+    &--profile{
+        color: getColor(text-base);
+        .c-card__title{
+            span{
+                display: block;
+                font-size: 66.666666666%; //12px
+                font-weight: nomal;
+            }
+        }
+    }
+
+    //スライダー用のカード（TOPページ）
+    &--slider{
+        position: relative;
+        height: 280px;
+        color: getColor(text-base);
+        overflow: hidden;
+        @include media(md){
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            //height: 360px;
+        }
+        .c-card__textBox{
+            height: inherit;
+            padding: 12px 12px getSysMargin(md);
+            // @include media(md){
+            //     padding: 12px 12px getSysMargin(md);
+            // }
+        }
+        .c-card__title{
+            text-align: left;
+            font-size: 22px; //固定サイズとする
+            line-height: 1.4;
+            @include media(md){
+                font-size: 24px; //固定サイズとする
+            }
+        }
+        .c-card__text{
+            margin-top: getSysMargin(xs);
+            font-size: 16px; //固定サイズとする
+            text-align: left;
+        }
+        
+        .c-time{
+            position: absolute;
+            bottom: getSysMargin(xs);
+            right: 12px;
+            font-size: 16px; //固定サイズとする
+            color: getColor(base-white);
+        }
+    }
+}
+
+
+
+//リストのカラム指定
+
+@for $i from 1 through 11 {
+
+    //メディアクエリごとの設定
+    @each $key,
+    $value in $_breakpoints {
+        @include media(#{$key}) {
+            .c-col-#{$key}-#{$i} {
+                .c-card__textBox {
+                    padding: 0 0 0 getSysMargin(sm);
+                }
+            }
+        }
+    }
+}

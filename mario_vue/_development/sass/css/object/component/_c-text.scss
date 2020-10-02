@@ -1,0 +1,30 @@
+.c-text {
+    margin-top: getSysMargin(sm);
+    font-size: fz(16);
+    color: getColor(text-base);
+
+    @include media(md) {
+        margin-top: getSysMargin(md);
+    }
+}
+
+.c-text--correction {
+    text-align: right;
+    padding-right: 70px;
+    font-size: 14px;
+}
+
+p.c-text--correction_2 {
+    text-align: right;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.c-border {
+    border: 1px solid #000;
+}
+
+.c-border_default {
+    border: 1px solid #000;
+    padding: 15px
+}

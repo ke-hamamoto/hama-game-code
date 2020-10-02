@@ -1,0 +1,55 @@
+/* --------------------
+バナーエリア設定
+-------------------- */
+
+.p-footer-banners{
+//    margin-top: 40px;
+    .l-content__inner{
+        margin-top: 32px;
+        @include media(md){
+            margin-top: 32px;
+        }
+    }
+    .chinese-site {
+        @include media(md) {
+            width: 640px;
+            @include marginRL;
+        }
+    }
+}
+
+.p-banner_footer--info{
+
+@include media(md){
+    width: 768px;
+    margin:0 auto;
+}
+    .p-banner_footer--info_text{
+        font-size:35px;
+    }
+}
+
+.p-footer-banners-inner_span{
+    @include media(md) {
+        font-size:36px;
+    }
+    font-size:24px;
+    vertical-align:sub;
+    
+    
+
+}
+
+.p-footer-banners-inner_span02{
+    @include media(md) {
+        font-size:20px;
+        margin-right:20px;
+    }
+    font-size:16px;
+    margin-left:15px;
+    font-weight:normal;
+}
+
+.testtest{
+    
+}

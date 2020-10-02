@@ -1,0 +1,130 @@
+.p-ade {
+    margin-top: 24px;
+    @include media(md) {
+        display: flex;
+    }
+
+    .p-ade-dl {
+        width: 100%;
+        padding: 24px 12px;
+
+        @include media(md) {
+//            width: 50%;
+            padding: 24px;
+        }
+
+        &__title {
+            padding-bottom: 16px;
+            font-size: fz(20);
+            font-weight: bold;
+            text-align: left;
+            border-bottom: 2px solid getColor(text-base);
+
+            @include media(md) {
+                text-align: center;
+            }
+        }
+
+        &__text {
+            @include media(md) {
+                //                font-size: fz(16);
+            }
+
+            .list {
+                //ul
+                padding: 24px 0px 0px;
+
+                @include media(md) {
+                    padding: 24px 0px 0px;
+                    //                    font-size: fz(16);
+                }
+            }
+
+            .item {
+                //li
+                margin-top: 16px;
+                font-size: fz(18);
+                line-height: 1.6;
+
+                @include media(md) {}
+
+                &:first-child {
+                    margin-top: 0px;
+
+                    @include media(md) {}
+                }
+            }
+        }
+
+        &.point {
+//            background-color: #ffecec;
+            background-color: #fdfaee;
+
+            .item {
+                display: flex;
+
+                > span:first-child {
+                    margin-right: 8px;
+                }
+            }
+        }
+
+        &.current {
+            margin-top: 16px;
+            background-color: #edf6ff;
+
+            @include media(md) {
+                margin-top: 0px;
+            }
+
+            .p-ade-dl__text {
+                .list {
+                    list-style-type: disc;
+                }
+
+                .item {
+                    margin-left: 16px;
+
+                    @include media(md) {
+                        margin-left: 24px;
+                    }
+
+                    a {
+                        color: getColor(text-base);
+
+                        &:link {
+                            text-decoration: none;
+                            border-bottom: 1px solid getColor(text-base);
+                        }
+
+                        &:hover {
+                            text-decoration: none;
+                            border-bottom: none;
+                        }
+
+                        &.u-fa-bg {
+                            &--caret {
+//                                padding-right: 16px;
+//
+//                                span {
+//                                    line-height: 1.2;
+//                                }
+
+                                &::before {
+                                    font-size: 19px;
+                                }
+                            }
+                        }
+                        /* Edge(EdgeHTML) & IE11 & IE10 */
+                        _:-ms-lang(x), &.u-fa-bg--caret{
+                            padding-right: 20px;
+                            &::before{
+                                font-size: 25px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

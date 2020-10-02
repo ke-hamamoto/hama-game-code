@@ -1,0 +1,170 @@
+@charset "UTF-8";
+
+.c-mokuji {
+    width: 100%;
+    margin: getSysMargin(lg) auto 0;
+    border: 1px solid getColor(text-base);
+    font-weight: bold;
+
+    @include media(md) {
+        margin-top: getSysMargin(lg);
+    }
+
+    //枠線なし
+    &--noBorder {
+        border: none;
+    }
+
+    &__title {
+        position: relative;
+        padding: getSysMargin(sm) 0;
+        border-bottom: 1px solid getColor(text-base);
+        text-align: center;
+        font-size: fz(16);
+    }
+
+    &__notes {
+        position: absolute;
+        bottom: -24px;
+        right: 12px;
+        //        transform: translate(-50%,-50%);
+        font-size: fz(10);
+        font-weight: normal;
+
+        @include media(md) {
+            bottom: -32px;
+            right: 16px;
+            font-size: fz(12);
+        }
+        &.sp_on{
+            @include media(sm) {
+                display: block;
+            }
+            @include media(md) {
+                display: none;
+            }
+        }
+        &.pc_on{
+            @include media(sm) {
+                display: none;
+            }
+            @include media(md) {
+                display: inline;
+            }
+        }
+    }
+
+    &__list {
+        //ul
+        padding: getSysMargin(md);
+
+        @include media(sm) {
+            padding: 32px 24px 16px;
+        }
+
+        @include media(md) {
+            padding: 32px 32px 32px 64px;
+        }
+
+        li {
+            position: relative;
+            padding-left: 0;
+            margin-top: 16px;
+            margin-bottom: 6px;
+            line-height: 1.6;
+
+            @include media(sm) {
+                padding-left: 16px;
+                font-size: fz(16);
+            }
+
+            @include media(md) {
+                padding-left: 24px;
+                font-size: fz(16);
+            }
+            &:first-child {
+                margin-top: 0;
+            }
+            &:last-child {
+                padding-bottom: 0;
+                margin-bottom: 0;
+            }
+
+            //アイコン
+            &::before{
+                content: "";
+                position: absolute;
+                margin: auto;
+                top: 7px;
+                left: 0;
+                width: 8px;
+                height: 8px;
+                border-top: 3px solid getColor(main-01);
+                border-right: 3px solid getColor(main-01);
+                transform: rotate(135deg);
+                vertical-align: middle;
+                @include media(md) {
+                    top: 5px;
+                    width: 11px;
+                    height: 11px;
+                }
+            }
+            a {
+                padding-bottom: 2px;
+
+                &:link {
+                    color: getColor(text-base);
+                    //                    text-decoration: underline;
+                }
+
+                &:visited {
+                    color: getColor(text-base);
+                    //                    text-decoration: underline;
+                }
+
+                &:hover {
+                    color: getColor(text-base);
+                    text-decoration: underline;
+                }
+            }
+
+            &.mokuji-child {
+                list-style-type: disc;
+                margin-left: 3.2em;
+                font-weight: normal;
+                padding-left: 0em;
+                margin-bottom: 6px;
+                margin-top: 0;
+
+                @include media(sm) {
+                    font-size: fz(12);
+                    margin-left: 16px;
+                }
+
+                @include media(md) {
+                    font-size: fz(14);
+                }
+                //アイコン
+                &::before{
+                    display: none;
+                }
+            }
+        }
+    }
+    &__anchor-back{
+        width: 100%;
+        padding: 16px 0 0;
+        text-align: right;
+
+        @include media(md) {
+            padding: 24px 0 0;
+        }
+        a:link,a:visited{
+            color: getColor(link);
+            text-decoration: underline;
+        }
+        a:hover{
+            color: getColor(link-hover);
+        }
+    }
+}

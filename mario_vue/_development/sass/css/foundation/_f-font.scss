@@ -1,0 +1,85 @@
+
+// 和欧混植、Helvetica優先、游ゴシックなし
+$_font-family-sans-serif-1: "Helvetica Neue", Helvetica, "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif !default;
+// 和欧混植、Helvetica優先、游ゴシック優先
+$_font-family-sans-serif-2: "Helvetica Neue", Helvetica, "游ゴシック", YuGothic, "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif !default;
+// 和欧混植、Verdana優先、游ゴシックなし
+$_font-family-sans-serif-3: Verdana, "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif !default;
+// 和欧混植、Verdana優先、游ゴシック優先
+$_font-family-sans-serif-4: Verdana, "游ゴシック", YuGothic, "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif !default;
+// 和文のみ、游ゴシックなし
+$_font-family-sans-serif-5: "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif !default;
+// 和文のみ、游ゴシック優先
+$_font-family-sans-serif-6: "游ゴシック", YuGothic, "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif !default;
+
+
+// 和欧混植、Times New Roman優先、游明朝なし
+$_font-family-serif-1: "Times New Roman", "Hiragino Mincho ProN", "HG明朝E", Meiryo, serif !default;
+// 和欧混植、Times New Roman優先、游明朝優先
+$_font-family-serif-2: "Times New Roman", "游明朝", "YuMincho", "Hiragino Mincho ProN", "HG明朝E", Meiryo, serif !default;
+// 和欧混植、Georgia優先、游明朝なし
+$_font-family-serif-3: Georgia, "Hiragino Mincho ProN", "HG明朝E", Meiryo, serif !default;
+// 和欧混植、Georgia優先、游明朝優先
+$_font-family-serif-4: Georgia, "游明朝", "YuMincho", "Hiragino Mincho ProN", "HG明朝E", Meiryo, serif !default;
+// 和文のみ、游明朝なし
+$_font-family-serif-5: "Hiragino Mincho ProN", "HG明朝E", Meiryo, serif !default;
+// 和文のみ、游明朝優先
+$_font-family-serif-6: "游明朝", "YuMincho", "Hiragino Mincho ProN", "HG明朝E", Meiryo, serif !default;
+
+
+//fontawesomeのマージン設定
+.fas{
+    &.rightSide{
+        margin-left: 6px;
+    }
+    &.leftSide{
+        margin-right: 6px;
+    }
+}
+
+
+@function fz($size) {
+    $fz: (
+        10: 71.428571%,
+        11: 78.571428%,
+        12: 85.714286%,
+        13: 92.857142%,
+        14: 100%,
+        15: 107.142857143%,
+        16: 114.285714%,
+        17: 121.428571%,
+        18: 128.571429%,
+        19: 135.7142857%,
+        20: 142.857142857%,
+        21: 150%,
+        22: 157.142857%,
+        23: 164.285714%,
+        24: 171.428571%,
+        25: 178.5714286%,
+        26: 185.714286%,
+        27: 192.857142857%,
+        28: 200%,
+        30: 214.2857143%,
+        31: 221.42857143%,
+        32: 228.571429%,
+        34: 242.8571429%,
+        35: 250%,
+        36: 257.1428571%,
+        37: 264.28571429%,
+        38: 271.428571429%,
+        39: 278.57142857%,
+        40: 285.714286%,
+        41: 292.85714286%,
+        42: 300%,
+        43: 307.14285714%,
+        44: 314.285714286%,
+        45: 321.42857143%,
+        46: 328.571428571%,
+        47: 335.71428571%,
+        48: 342.85714286%,
+        49: 350%,
+        50: 357.142857143%,
+        72: 514.285714286%
+    );
+    @return map-get($fz,$size);
+}

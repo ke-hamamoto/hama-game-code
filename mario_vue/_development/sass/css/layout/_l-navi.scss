@@ -1,0 +1,63 @@
+.l-navi {
+    position: relative;
+    background-color: getColor(main-01);
+    z-index: 4;
+
+    &__inner {
+        position: relative;
+    }
+
+    .c-navi {
+        &__item {
+            span {
+                display: inline-block;
+                position: relative;
+                width: 100%;
+                top: 50%;
+                left: 50%;
+                -webkit-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+
+                &.newIcon {
+                    &::after {
+                        position: absolute;
+                        top: -16px;
+                        right: 6px;
+                        display: block;
+                        content: 'NEW';
+                        padding: 2px 4px;
+                        color: #fff;
+                        font-size: 11px;
+                        border-radius: 2px;
+                        background-color: #ff0000;
+
+                        @include media(sm) {
+                            top: -19px;
+                            font-size: 9px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    //ナビ黒背景[非表示]
+    &__bgLayer {
+        content: '';
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 3;
+    }
+}
+
+//ナビ黒背景[表示]
+#js-navi-bgLayer.is-naviBg--active{
+    display: block;
+}
+
+

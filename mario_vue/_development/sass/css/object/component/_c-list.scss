@@ -1,0 +1,115 @@
+.c-list {
+    display: flex;
+    align-items: stretch;
+
+    //横方向（左から右）
+    &--row {
+        flex-flow: row wrap;
+    }
+
+    //横方向（右から左）
+    &--row-rev {
+        flex-flow: row-reverse wrap;
+    }
+
+    //縦方向（上から下）
+    &--col {
+        flex-flow: column wrap;
+    }
+
+    //縦方向（下から上）
+    &--col-rev {
+        flex-flow: column-reverse wrap;
+    }
+
+    //ボーダー上下左右
+    &--outline {
+        border: 1px solid getColor(gray-darken-15);
+    }
+    //ボーダー上
+    &--outline-TopBtm {
+        border-top: 1px solid getColor(gray-darken-15);
+        border-bottom: 1px solid getColor(gray-darken-15);
+    }
+
+    &__item {
+        width: 100%;
+        margin-top: getSysMargin(sm);
+        text-align: left;
+
+        @include media(md) {
+            //margin-top: getSysMargin(lg);
+            margin-top: getSysMargin(md);
+            //@include getWidthAdjustedMargin(3, 16px);
+            //margin-top: 0;
+        }
+
+        // &:first-child{
+        //   margin-top: 0;
+        // }
+
+
+        //外枠
+        &--outline {
+            border: 1px solid getColor(gray-darken-15);
+        }
+
+        &--outline-btm {
+            padding-bottom: getSysMargin(sm);
+            border-bottom: 1px solid getColor(gray-darken-15);
+
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+
+        &--outline-top {
+            border-top: 1px solid getColor(gray-darken-15);
+        }
+
+        //カラーパターン
+        &--gray {
+            background-color: getColor(base-white);
+        }
+
+        //シャドウ
+        &--shadow {
+            box-shadow: $g_bShadow-rb_l;
+        }
+
+        //関連リンク
+        &--relation {
+            position: relative;
+            margin-top: getSysMargin(sm);
+            padding-left: 1.5em;
+
+            line-height: 1.4;
+
+            @include media(md) {
+                margin-top: getSysMargin(sm);
+            }
+        }
+
+        &--typeDisc {
+            list-style-type: disc;
+        }
+    }
+}
+
+
+
+//リストのカラム指定
+@for $i from 1 through 6 {
+
+    //メディアクエリごとの設定
+    @each $key,
+    $value in $_breakpoints {
+        @include media(#{$key}) {
+            .c-list--col-#{$key}-#{$i} {
+                .c-list__item {
+                    @include getWidthAdjustedMargin($i, 12px);
+                }
+            }
+        }
+    }
+}

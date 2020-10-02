@@ -1,0 +1,26 @@
+$num: 4;
+@for $i from 0 through 20 {
+    .u-mt#{$i * $num} {margin-top: #{$i * $num}px !important;}
+    .u-mr#{$i * $num} {margin-right: #{$i * $num}px !important;}
+    .u-mb#{$i * $num} {margin-bottom: #{$i * $num}px !important;}
+    .u-ml#{$i * $num} {margin-left: #{$i * $num}px !important;}
+    .u-mAll#{$i * $num} {margin: #{$i * $num}px !important;}
+
+    //--------------------------------------------------
+    //メディアクエリごとの設定
+    //--------------------------------------------------
+    @each $key, $value in $_breakpoints {
+        @include media(#{$key}){
+            .u-mt#{$i * $num}--#{$key} {margin-top: #{$i * $num}px !important;}
+            .u-mr#{$i * $num}--#{$key} {margin-right: #{$i * $num}px !important;}
+            .u-mb#{$i * $num}--#{$key} {margin-bottom: #{$i * $num}px !important;}
+            .u-ml#{$i * $num}--#{$key} {margin-left: #{$i * $num}px !important;}
+            .u-mAll#{$i * $num}--#{$key} {margin: #{$i * $num}px !important;}
+        }
+    }
+}
+
+.u-mAuto{
+  margin-right: auto !important;
+  margin-left: auto !important;
+}

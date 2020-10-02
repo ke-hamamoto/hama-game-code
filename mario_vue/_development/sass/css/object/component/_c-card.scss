@@ -1,0 +1,97 @@
+.c-card{
+    @include transition-nomal();
+
+    //---------------------------------
+    //カードのバリエーション
+    //---------------------------------
+    //枠線あり
+    &--outline{
+      border: 1px solid getColor(text-base);
+    }
+
+    //高さが親要素の100%
+    &--full{
+      height: 100%;
+    }
+
+    //「.c-card--no-hvr」はホバーエフェクト対象外
+    // &:not(&--no-hvr):hover{
+    //     background-color: rgba(getColor(base-black), .1);
+    //     // *{
+    //     //     color: getColor(base-white);
+    //     // }
+    // }
+
+    //---------------------------------
+    //カードの子要素
+    //---------------------------------
+    &__inner{
+        height: 100%;
+    }
+
+    &__imgBox{
+        padding: 0;
+        width: 100%;
+    }
+
+    &__textBox{
+        padding: getSysMargin(sm) getSysMargin(xs) getSysMargin(md);
+        text-align: left;
+        // color: inherit;
+        @include media(md){
+            padding: getSysMargin(sm) getSysMargin(sm) getSysMargin(md);
+            &.rightSide{
+                padding-right: 0;
+            }
+            &.leftSide{
+                padding-left: 0;
+            }
+        }
+        &--no-mtb{
+            @include media(md){
+                padding-top: 0;
+                padding-bottom: 0;
+            }
+        }
+
+    }
+
+    &__title{
+        font-size: fz(18);
+        font-weight: bold;
+        color: inherit;
+    }
+
+    &__text{
+        margin-top: 12px;
+        font-size: fz(16);
+        color: inherit;
+        @include media(md){
+           margin-top: 16px;
+        }
+    }
+
+    // &__moreBox{
+    //     padding: 0 getSysMargin(xs) getSysMargin(xs);
+    //     //background-color: getColor(base-white);
+    //     //border-top: 1px solid getColor(gray-lighten-10);
+    //     line-height: 1;
+    //     text-align: right;
+    //     @include media(md){
+    //         padding: 0 getSysMargin(sm) getSysMargin(sm);
+    //     }
+    // }
+
+    &__more{
+        display: block;
+        padding: 0 getSysMargin(xs) getSysMargin(xs);
+        //background-color: getColor(base-white);
+        //border-top: 1px solid getColor(gray-lighten-10);
+        line-height: 1;
+        text-align: right;
+        @include media(md){
+            padding: 0 getSysMargin(sm) getSysMargin(sm);
+        }
+    }
+}
+

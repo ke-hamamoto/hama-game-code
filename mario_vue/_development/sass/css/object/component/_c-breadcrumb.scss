@@ -1,0 +1,51 @@
+//パンくずリスト
+.c-breadcrumb{
+    > ul{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: stretch;
+        width: 100%;
+        height: auto;
+        margin-right: auto;
+        margin-left: auto;
+        padding: getSysMargin(xs) getSysMargin(sm);
+        @include media(md){
+            width: $g_width-content;
+            padding: getSysMargin(xs) 0;
+        }
+        > li{
+            position: relative;
+            display: inline-block;
+            font-size: fz(12);
+            margin-right: 12px;
+            padding-right: 24px;
+            line-height: 1.6;
+            color: getColor(text-base);
+            &::after{
+                content: '＞';
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
+            &:last-child{
+                &::after{
+                    display: none;
+                }
+            }
+            a{
+                color: getColor(text-base);
+                transition: inherit;
+                &:hover{
+                    text-decoration: underline;
+                    transition: inherit;
+                }
+                &:link{
+                    color: getColor(text-base);
+                }
+                &:visited{
+                    color: getColor(text-base);
+                }
+            }
+        }
+    }
+}

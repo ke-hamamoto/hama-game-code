@@ -1,0 +1,30 @@
+//メディアサイズ
+// $_medeia-xs: 480px; //SP縦（最大値）
+// $_medeia-sm: 481px; //SP横（最小値）
+// $_medeia-md: 780px; //TAB縦（最小値）
+// $_medeia-lg: 1000px; //TAB横（最小値）
+// $_medeia-xl: 1280px; //PC（最小値）
+
+$_medeia-xxs:  320px !default; //SP-SE縦（最大値）
+$_medeia-xs:  449px !default; //SP縦（最大値）
+$_medeia-sm:  599px !default; //SP横（最大値）
+$_medeia-md:  600px !default; //TAB縦（最小値）
+$_medeia-lg:  960px !default; //TAB横（最小値）
+$_medeia-xl: 1280px !default; //PC（最小値）
+
+$_breakpoints: (
+  'xxs': 'only screen and (max-width:'   & #{$_medeia-xxs} & ')',
+  'xs': 'only screen and (max-width:'   & #{$_medeia-xs} & ')',
+  'sm': 'only screen and (max-width:'   & #{$_medeia-sm} & ')',
+  'md': 'print, screen and (min-width:' & #{$_medeia-md} & ')',
+  'lg': 'only screen and (min-width:'   & #{$_medeia-lg} & ')',
+  'xl': 'only screen and (min-width:'   & #{$_medeia-xl} & ')',
+) !default;
+
+
+//メディアクエリ
+@mixin media($_breakpoint: md) {
+  @media #{map-get($_breakpoints, $_breakpoint)} {
+    @content;
+  }
+}

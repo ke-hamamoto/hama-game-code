@@ -1,0 +1,14 @@
+
+.l-body{
+    &__program {
+        line-height: 1;
+        font-family: "ヒラギノ角ゴ ProN W3","Hiragino Kaku Gothic ProN","メイリオ",Meiryo,"ＭＳ Ｐゴシック","MS PGothic",sans-serif;
+        &__inner {
+            line-height: 1.57;
+            font-family: 'Yu Gothic', YuGothic, Meiryo, sans-serif;
+        }
+        .l-navi {
+            font-family: "ヒラギノ角ゴ ProN W3","Hiragino Kaku Gothic ProN","メイリオ",Meiryo,"ＭＳ Ｐゴシック","MS PGothic",sans-serif;
+        }
+    }
+}

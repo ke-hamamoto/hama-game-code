@@ -1,0 +1,30 @@
+.u-txt-hr--right{text-align: right;}
+.u-txt-hr--center{text-align: center;}
+.u-txt-hr--left{text-align: left;}
+
+.u-txt-color--white{color: getColor(base-white);}
+.u-txt-color--black{color: getColor(base-black);}
+.u-txt-color--red {color:red;}
+.u-txt-color--base{color: getColor(text-base);}
+
+.u-txt-bold--light-2{font-weight:lighter;}
+.u-txt-bold{font-weight: bold;}
+.u-txt-bold--nomal{font-weight:normal;}
+.u-txt-bold--bold-1{font-weight:bolder;}
+
+.u-txt-marker{
+    padding: 1px 1px;
+    background-color: #fff799;
+    font-weight: bold;
+    &--line{
+        padding: 1px 1px;
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(75%, transparent), color-stop(75%, #fff799));
+        background: -webkit-linear-gradient(transparent 75%, #fff799 75%);
+        background: linear-gradient(transparent 75%, #fff799 75%);
+        font-weight: bold;
+    }
+}
+
+.u-txt-underline{
+    text-decoration: underline;
+}

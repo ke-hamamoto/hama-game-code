@@ -1,0 +1,406 @@
+//ローカルナビのカラム数
+$g_column-navi: 3 !default;
+
+//-------------------------
+//naviボタン
+//-------------------------
+.p-navi {
+    //ul
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    width: 100%;
+    height: 94px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 7px 0px;
+
+    @include media(md) {
+        height: 72px;
+        padding: 12px 0px;
+    }
+
+    &__item {
+        font-feature-settings: "palt";
+        position: relative;
+        //        width: 116px;
+        width: calc((100% - (5px * 2)) / #{$g_column-navi});
+        height: 80px;
+        text-align: center;
+        border: 2px solid #000;
+        border-radius: 6px;
+        background-color: #fff;
+        margin-left: 5px;
+        cursor: pointer;
+
+        @include media(md) {
+            width: 232px;
+            height: 48px;
+            margin-left: 12px;
+        }
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        & > span {
+            display: inline-block;
+            width: 100%;
+            margin-top: 49px;
+            font-weight: bold;
+
+            @include media(xxs) {
+                font-size: 12px;
+            }
+
+            @include media(md) {
+                position: absolute;
+                top: 15px;
+                left: 84px;
+                transform: none;
+                width: auto;
+                margin: 0;
+                font-size: fz(16);
+            }
+        }
+
+        > a {
+            display: block;
+            height: 100%;
+
+            > span {
+                color: getColor(text-base);
+                display: inline-block;
+                margin-top: 49px;
+                font-weight: bold;
+
+                @include media(xxs) {
+                    font-size: 12px;
+                }
+
+                @include media(md) {
+                    margin: 0;
+                    position: absolute;
+                    top: 15px;
+                    left: 84px;
+                    transform: none;
+                    font-size: fz(16);
+                }
+            }
+        }
+
+        &.is-navi--active {
+            position: relative;
+            height: 89px;
+            border-bottom: none;
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+            z-index: 6;
+
+            @include media(md) {
+                height: 62px;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -1px;
+                left: 0;
+                width: 100%;
+                height: 2px;
+                background-color: #fff;
+                z-index: 1;
+            }
+        }
+
+        &#navi-news {
+            background: #fff url('../images/ico-navi-news.png') no-repeat center 12px/35px;
+            transition: background 0.1s;
+
+            @include media(md) {
+                background: #FFF url("../images/ico-navi-news.png") no-repeat 44px 8px/32px;
+            }
+
+            &.is-navi--inactive {
+                background-image: url('../images/ico-navi-news_black.png');
+            }
+        }
+
+        &#navi-data {
+            background: #fff url('../images/ico-navi-data.png') no-repeat center 12px/36px;
+            transition: background 0.1s;
+
+            @include media(md) {
+                background: #FFF url("../images/ico-navi-data.png") no-repeat 48px 8px/32px;
+            }
+
+            &.is-navi--inactive {
+                background-image: url('../images/ico-navi-data_black.png');
+            }
+
+            & > span {
+
+                @include media(md) {
+                    left: 88px;
+                }
+            }
+        }
+
+        &#navi-knowledge {
+            background: #fff url('../images/ico-navi-knowledge.png') no-repeat center 15px/38px;
+            transition: background 0.1s;
+
+            @include media(md) {
+                background: #FFF url("../images/ico-navi-knowledge.png") no-repeat 44px 10px/32px;
+            }
+
+            &.is-navi--inactive {
+                background-image: url('../images/ico-navi-knowledge_black.png');
+            }
+
+            &.is-navi--active {
+                height: 87px;
+
+                @include media(md) {
+                    height: 60px;
+                }
+            }
+        }
+
+
+    }
+}
+
+
+
+//-------------------------
+//naviコンテンツ
+//-------------------------
+.p-navi-child {
+    //ul
+    //    display: none; /**/
+    display: block;
+    /**/
+    position: absolute;
+    left: 0;
+    top: 94px;
+    width: calc(100% - (8px * 2));
+    margin-left: 8px;
+    padding: 20px;
+    border: 2px solid #000;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    background-color: #fff;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 5;
+    //    transition: all 0.4s;
+
+    @include media(md) {
+        top: 72px;
+        left: 120px;
+        //        transform: translateX(-50%);
+        min-width: 232px;
+        width: auto;
+        margin-left: 0;
+        padding: 20px 24px 20px 20px;
+        border-top-left-radius: 6px;
+    }
+
+
+    &__item {
+        //li
+        margin-top: 20px;
+        font-size: fz(20);
+        font-weight: bold;
+
+        &:first-child {
+            margin-top: 0px;
+        }
+
+        a {
+            color: getColor(text-base);
+            border-bottom: 1px solid getColor(text-base);
+
+            &:hover {
+                text-decoration: none;
+                border-bottom: none;
+            }
+
+            &.u-fa-bg {
+                &--caret {
+                    padding-right: 16px;
+
+                    span {
+                        line-height: 1.2;
+                    }
+
+                    &::before {
+                        font-size: 19px;
+                    }
+                }
+            }
+
+            /* Edge(EdgeHTML) & IE11 & IE10 */
+            _:-ms-lang(x),
+            &.u-fa-bg--caret {
+                padding-right: 20px;
+
+                &::before {
+                    font-size: 25px;
+                }
+            }
+        }
+    }
+
+    &.is-navi--active {
+        visibility: visible;
+        opacity: 1;
+        //        transition: all 0.4s;
+    }
+
+    &.navi-news.is-navi--active {
+        border-top-left-radius: 0px;
+
+        @include media(md) {
+            border-top-left-radius: 0px;
+        }
+    }
+
+    &.navi-data {
+        left: 0;
+
+        @include media(md) {
+            left: 364px;
+            border-top-left-radius: 0px;
+        }
+    }
+}
+
+
+
+//-------------------------
+//navi　スクロール時動作
+//-------------------------
+#js-naviBox {
+    &.is-navi--fixed {
+        position: fixed;
+        top: 0;
+        z-index: 4;
+
+        .p-navi {
+            //ul
+            height: 60px;
+
+            @include media(md) {
+                height: 72px;
+            }
+
+            &__item {
+                height: 46px;
+
+                @include media(md) {
+                    height: 48px;
+                }
+
+                &#navi-news {
+                    background-image: none;
+
+                    @include media(md) {
+                        background: #FFF url("../images/ico-navi-news.png") no-repeat 44px 8px/32px;
+                    }
+
+                    &.is-navi--inactive {
+                        background-image: none;
+
+                        @include media(md) {
+                            background: #FFF url("../images/ico-navi-news_black.png") no-repeat 44px 8px/32px;
+                        }
+                    }
+                }
+
+                &#navi-data {
+                    background-image: none;
+
+                    @include media(md) {
+                        background: #FFF url("../images/ico-navi-data.png") no-repeat 48px 8px/32px;
+                    }
+
+                    &.is-navi--inactive {
+                        background-image: none;
+
+                        @include media(md) {
+                            background: #FFF url("../images/ico-navi-data_black.png") no-repeat 48px 8px/32px;
+                        }
+                    }
+                }
+
+                &#navi-knowledge {
+                    background-image: none;
+
+                    @include media(md) {
+                        background: #FFF url("../images/ico-navi-knowledge.png") no-repeat 44px 10px/32px;
+                    }
+
+                    &.is-navi--active {
+
+                        @include media(md) {
+                            height: 60px;
+                        }
+                    }
+
+                    &.is-navi--inactive {
+                        background-image: none;
+
+                        @include media(md) {
+                            background: #FFF url("../images/ico-navi-knowledge_black.png") no-repeat 44px 10px/32px;
+                        }
+                    }
+                }
+
+                & > span {
+                    width: 100%;
+                    margin-top: 0px;
+                    line-height: 42px;
+
+                    @include media(md) {
+                        width: auto;
+                        line-height: inherit;
+                    }
+                }
+
+                > a {
+                    > span {
+                        margin-top: 0px;
+                        line-height: 42px;
+
+                        @include media(md) {
+                            line-height: inherit;
+                        }
+                    }
+                }
+
+                &.is-navi--active {
+                    height: 53px;
+
+                    @include media(md) {
+                        height: 62px;
+                    }
+                }
+            }
+        }
+
+
+        .p-navi-child {
+            //ul
+            top: 58px;
+
+            @include media(md) {
+                top: 72px;
+            }
+        }
+    }
+}

@@ -1,0 +1,52 @@
+//支局長コラム(TOPページ)
+// .p-grid--column{
+//     color: getColor(text-base);
+//     .c-grid__item{
+//         &:first-child{
+//             padding-bottom: getSysMargin(sm);
+//             @include media(md){
+//                 padding-right: getSysMargin(sm);
+//             }
+//         }
+//     }
+// }
+
+//支持率(TOPページ)
+.p-grid--support-rate{
+    border: 1px solid getColor(accent-gray);
+
+    @include media(md){
+        padding-top: getSysMargin(sm);
+        padding-bottom: getSysMargin(sm);
+        border-top: 2px solid getColor(accent-gray);
+        border-right: none;
+        border-bottom: 2px solid getColor(accent-gray);
+        border-left: none;
+    }
+
+    .c-grid__item{
+        position: relative;
+        
+        &:not(:first-child){
+            margin-top: getSysMargin(sm);
+            @include media(md){
+                margin-top: 0;
+            }
+        }
+        &:last-child{
+            margin-bottom: getSysMargin(sm);
+            @include media(md){
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+.p-grid--slider{
+    .c-grid__item{
+        &:nth-of-type(2){
+            position:relative;
+        }
+    }
+}
+

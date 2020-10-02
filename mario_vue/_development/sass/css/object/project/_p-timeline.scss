@@ -1,0 +1,773 @@
+/* --------------------
+タイムライン（時系列）設定
+-------------------- */
+
+.tabBox{
+    margin-top: getSysMargin(xxl);
+    padding-bottom: getSysMargin(xxl);
+    @include media(md){
+
+    }
+    ul.tab {
+        display: none;
+    }
+}
+
+
+/*
+タイムライン 本記
+*/
+.timeline__honki{
+    margin: 40px auto;
+    position: relative;
+    width: 720px;
+    line-height: 1.4;
+    @include media(sm){
+        width: 100%;
+        padding: 0px;
+    }
+
+    .honki__img{//<figure>
+        width: 640px;
+        height: auto;
+        margin: 0 auto 32px;
+        text-align: center;
+
+        @include media(sm){
+            width: 100%; height: auto;
+            margin-bottom: 16px;
+        }
+
+        img{
+            width: 100%;
+        }
+
+        &.content--video {
+            width: 640px;
+            height: 360px;
+            position: relative;
+            margin-right: auto;
+            margin-left: auto;
+            //margin-bottom: 32px;
+
+            @include media(sm){
+                width: 100%;
+                height: 0;
+                //                padding-bottom: 56.25%;
+            }
+
+            iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+    .honki__text{
+        width: 100%;
+
+        @include media(sm){
+        }
+    }
+
+    .honki__time{//<time>
+        display: block;
+        margin-bottom: 32px;
+        font-size: fz(14);
+        color: #999;
+
+        @include media(sm){
+            margin-bottom: 24px;
+        }
+    }
+
+    .honki__title{//<h2>
+        font-size: fz(20);
+        font-weight: bold;
+        margin-bottom: 16px;
+
+        @include media(sm){
+        }
+    }
+
+    .honki__lead{//<p>
+        font-size: fz(16);
+        //        margin-bottom: 32px;
+        line-height: 1.6;
+
+        @include media(sm){
+            font-size: fz(16);
+            //            margin-bottom: 24px;
+        }
+    }
+
+    /* もっと読む内 記事設定 */
+    .honki__more{
+        font-size: fz(16);
+        margin-bottom: 32px;
+        line-height: 1.6;
+
+        @include media(sm){
+            font-size: fz(16);
+            margin-bottom: 24px;
+        }
+
+        h3{
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 16px;
+            &:first-child{
+                margin-top: 16px;
+            }
+        }
+
+        figure{
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        p{
+            margin-bottom: 24px;
+        }
+    }
+    /* もっと読む内 記事設定 End */
+
+
+    /*
+    続きを読むボタン
+    */
+    .honki__btn{
+        //        width: 352px;
+        //        height: 48px;
+        //        margin: 0 auto 64px;
+        //
+        //        @include media(sm){
+        //            width: 100%;
+        //            margin: 0 auto 40px;
+        //        }
+
+        .button {
+            span{
+                display: inline-block;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+
+            }
+
+            &:hover {
+                opacity: 1;
+                //                background-color: getColor(text-base);
+
+                @include media(sm){
+                    //                    background-color: #333;
+                }
+
+                span{
+                    &::before,&:after{
+                        transition: all 0.5s;
+                        background-color: getColor(main-01);
+
+                        @include media(sm){
+                            //                            background-color: getColor(text-base);
+                        }
+                    }
+                }
+            }
+        }
+
+        &.active{
+            span{
+                &::after{
+                    top: 9%;
+                    right: -26px;
+                    background-color: getColor(main-01);
+                    transform: rotate(90deg);
+                    transition: all 0.5s;
+                }
+            }
+        }
+    }
+
+    //------------------------------
+    //本記をモーダルで表示
+    //------------------------------
+    &.modalBox{
+        position: relative;
+        display: flex;
+        width: 960px;
+        margin-bottom: 40px;
+        cursor: pointer;
+
+        @include media(sm){
+            display: block;
+            width: 100%;
+            height: auto;
+            margin-bottom: 24px;
+        }
+        &::before{
+            content: "";
+            position: absolute;
+            display: block;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            opacity: 0;
+            transition: all 0.5s;
+            z-index: 1;
+        }
+
+        .honki__img{//<figure>
+            width: 384px;
+            margin-right: 24px;
+            margin-bottom: 0px;
+
+            @include media(sm){
+                width: 100%;
+                height: auto;
+                margin-bottom: 16px;
+            }
+            &.content--video {
+                width: 384px;
+                height: 0;
+                padding-top: 56.25%;
+                position: relative;
+                margin-right: 12px;
+                margin-left: 12px;
+
+                @include media(sm){
+                    width: 100%;
+                    height: 0;
+                    padding-bottom: 0%;
+                    margin-right: 0px;
+                    margin-left: 0px;
+                }
+                iframe {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+        .honki__text{
+            width: calc(100% - (384px + 12px * 2));
+            margin-right: auto;
+            margin-left: auto;
+
+            @include media(sm){
+                width: 100%;
+            }
+        }
+        .honkiImgWrap + .honki__text{
+            width: calc(100% - (384px + 24px));
+            margin-right: 0;
+            margin-left: 0;
+
+            @include media(sm){
+                width: 100%;
+            }
+        }
+        .honki__time{//<time>
+            margin-bottom: 16px;
+
+            @include media(sm){
+                margin-bottom: 24px;
+            }
+        }
+        .honki__title{//<h2>
+            margin-bottom: 8px;
+            line-height:1.6;
+
+            @include media(sm){
+            }
+        }
+        .honki__lead{//<p>
+            margin-bottom: 16px;
+
+            @include media(sm){
+            }
+        }
+        &:hover {
+            &::before{
+                opacity: 0.3;
+                background-color: #fff;
+                transition: all 0.5s;
+            }
+        }
+    }
+    /* 本記 モーダル使用時 [End] */
+}
+/* 続きを読むボタン End */
+
+
+/*
+タイムライン（タブ）
+*/
+.box-labels-saigai-style,
+.label-main,
+#note-timeline{
+    display: block;
+}
+.box-labels-saigai-style {
+    margin-bottom: 2em;
+
+    @include media(sm){
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        overflow-x: scroll;
+        overflow-scrolling: touch;
+        -webkit-overflow-scrolling: touch;
+        white-space: nowrap;
+        width: 100%;
+        height: 100%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    &::after {
+        display: block;
+        clear: both;
+        content: "";
+    }
+
+    li {
+        display: inline-block;
+        width: 50%;
+        float: left;
+        border-bottom: none;
+        transition: 0.2s;
+        background-color: #efefef;
+        border-top: 1px solid #fff;
+        border-left: 2px solid #fff;
+
+        @include media(sm){
+            display: inline-block;
+            flex: 0 0 28%;
+            width: 100%;
+            height: 100%;
+            margin-right: 2px;
+            line-height: 50px;
+            text-align: center;
+            border-left: 1px solid #fff;
+
+            @include media(sm){
+                border-top-right-radius: 8px;
+                border-top-left-radius: 8px;
+            }
+        }
+    }
+
+    li:last-child {
+        border-right: 1px solid #fff;
+        border-top-right-radius: 25px;
+        border-bottom-right-radius: 25px;
+
+        @include media(sm){
+            border-top-right-radius: 8px;
+            border-bottom-right-radius: 0;
+        }
+    }
+
+    li:first-child {
+        border-top-left-radius: 25px;
+        border-bottom-left-radius: 25px;
+
+        @include media(sm){
+            border-top-left-radius: 8px;
+            border-bottom-left-radius: 0px;
+        }
+    }
+
+    li:nth-child(-n+2) {
+        @include media(sm){
+            border-top: none;
+        }
+    }
+
+    li:nth-child(odd) {
+        @include media(sm){
+            border-right: none;
+            border-left: 1px solid #fff;
+        }
+    }
+
+    li:nth-child(even) {
+        @include media(sm){
+            border-right: none;
+            border-left: 1px solid #fff;
+        }
+    }
+
+    li > div {
+        display: table;
+        width: 100%;
+        height: 50px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    li.active-label {
+        border-color: #fff;
+        background-color: getColor(main-02);
+        color: #fff;
+    }
+
+    li:hover {
+        border-color: #fff;
+        background-color: getColor(gray-darken-5);
+        color: getColor(text-light);
+
+        @include media(sm){
+            background-color: getColor(main-02);
+        }
+    }
+
+    li > div > div {
+        display: table-cell;
+        text-align: center;
+        vertical-align: middle;
+        font-size: 18px;
+        @include media(sm){
+            font-size: 14px;
+        }
+    }
+    li.label-status > div > div {
+        font-size: 16px;
+        @include media(sm){
+            font-size: 14px;
+        }
+        p{
+            line-height: 1.2;
+        }
+    }
+
+    //タブの数に対応
+    &.num-1 li {
+        width: 100%;
+        @include media(sm){
+            flex: 0 0 99.6%;
+        }
+    }
+    &.num-2 li {
+        width: 50%;
+        @include media(sm){
+            flex: 0 0 49.6%;
+        }
+    }
+    &.num-3 li {
+        width: 33.3333%;
+        @include media(sm){
+            flex: 0 0 32.86%;
+        }
+    }
+    &.num-4 li {
+        width: 25%;
+    }
+    &.num-5 li {
+        width: 20%;
+    }
+    &.num-6 li {
+        width: 16.6666%;
+    }
+    &.num-7 li {
+        width: 14.2857%;
+    }
+    &.num-8 li {
+        width: 12.5%;
+    }
+    &.num-9 li {
+        width: 11.1111%;
+    }
+    &.num-10 li {
+        width: 10%;
+    }
+}
+
+#note-timeline {
+    margin-bottom: 2em;
+    padding: 0 12px;
+
+    .nonews {
+        display: none;
+    }
+
+    &.nonews .nonews {
+        display: block;
+    }
+
+    &.nonews .normal {
+        display: none;
+    }
+}
+
+
+.box-timeline-saigai-style {
+
+}
+
+
+/*
+タイムライン(リスト)
+*/
+.timeline{
+    .displayWidth{
+        padding: 0 12px 0px;
+    }
+}
+.box-timeline-saigai-style {
+    position: relative;
+    //    padding-bottom: 36px;
+
+    @include media(sm){
+        //        padding: 0 12px 0px;
+    }
+
+    .item{
+        width: 720px;
+        padding: 16px 0;
+        margin-bottom: 0;
+        margin-right: auto;
+        margin-left: auto;
+        line-height: 1.4;
+        transition: all 0.5s;
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+
+        @include media(sm){
+            width: 100%;
+        }
+
+        &:first-child{
+            border-top: 1px solid rgba(0,0,0,0.1);
+        }
+    }
+
+    .item__inner {
+        cursor: pointer;
+    }
+
+    .item__inner::after {
+        display: block;
+        clear: both;
+        content: "";
+    }
+
+    .item__img {
+        width: 100%;
+        max-width: 208px;
+        height: auto;
+        margin-right: 16px;
+        transition: all 0.5s;
+        float: left;
+
+        @include media(sm){
+            max-width: 104px;
+            margin-right: 12px;
+        }
+    }
+
+    .item__title{
+        font-size: fz(18);
+        margin-bottom: 16px;
+        padding-bottom: 0;
+        font-weight: bold;
+        transition: all 0.5s;
+
+        @include media(sm){
+            margin-left: 116px;
+            margin-bottom: 12px;
+        }
+    }
+
+    .item__time {
+        font-size: fz(14);
+        color: #999;
+
+        @include media(sm){
+            margin-left: 116px;
+            text-align: left;
+        }
+    }
+
+    //item ホバー設定
+    .item{
+        &:hover {
+            .item__img {
+                opacity: 0.8;
+                transition: all 0.5s;
+            }
+
+            .item__title{
+                //                color: getColor(Gold);
+                transition: all 0.5s;
+            }
+        }
+        &:first-child{
+            border-top: 1px solid rgba(0,0,0,0.1);
+        }
+    }
+
+    //----------------------
+    //タイムライン２カラム
+    //----------------------
+    &.columns-2{
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+        //        padding-bottom: 36px;
+        @include media(sm){
+            //            padding: 0 12px 36px;
+        }
+        .item{
+            width: calc((960px / 2) - 14px);
+            padding: 16px 0;
+            margin-bottom: 0;
+            line-height: 1.4;
+            transition: all 0.5s;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+
+            @include media(sm){
+                width: 100%;
+            }
+            &:first-child,&:nth-child(2){
+                border-top: 1px solid rgba(0,0,0,0.1);
+            }
+            &:nth-child(2){
+                @include media(sm){
+                    border-top: none;
+                }
+            }
+            &:nth-child(odd){
+                margin-right: 28px;
+
+                @include media(sm){
+                    margin-right: 0px;
+                }
+            }
+            &:nth-child(odd):last-child{
+                margin-left: 0;
+            }
+        }
+
+        .item__img {
+            max-width: 180px;
+            height: auto;
+            margin-right: 16px;
+            transition: all 0.5s;
+
+            @include media(sm){
+                max-width: 104px;
+                margin-right: 12px;
+            }
+        }
+        .item__title{
+            font-size: fz(16);
+            margin-bottom: 16px;
+            transition: all 0.5s;
+
+            @include media(sm){
+                margin-left: 116px;
+                margin-bottom: 12px;
+            }
+        }
+        .item__time {
+            font-size: fz(14);
+            color: #999;
+
+            @include media(sm){
+                margin-left: 116px;
+                text-align: left;
+            }
+        }
+        //item ホバー設定
+        .item{
+            &:hover {
+                .item__img {
+                    opacity: 0.8;
+                    transition: all 0.5s;
+                }
+                .item__title{
+                    //                color: color(Gold);
+                    transition: all 0.5s;
+                }
+            }
+            &:first-child{
+                border-top: 1px solid rgba(0,0,0,0.1);
+            }
+        }
+    }
+}
+
+.more-timeline-saigai p {
+    display: inline-block;
+    padding: inherit;
+    border-radius: none;
+    background-color: none;
+    color: inherit;
+    font-weight: bold;
+    cursor: inherit;
+}
+
+
+/*
+もっとみるボタン設定
+*/
+.more--timeline.button{
+    display: block;
+    width: 352px;
+    height: 48px;
+    margin: 0 auto 0px;
+
+    @include media(sm){
+        width: calc(100% - 24px);
+    }
+
+    span{
+        &::before{
+            content: '';
+            position: absolute;
+            top: 4%;
+            right: -26px;
+            width: 10px;
+            height: 10px;
+            border-top: 2px solid color(main-01);
+            border-right: 2px solid color(main-01);
+            transform: rotate(135deg);
+            transition: all 0.5s;
+        }
+    }
+
+    &:hover {
+        span{
+            &::before{
+                border-top: 2px solid color(text-base);
+                border-right: 2px solid color(text-base);
+                transition: all 0.5s;
+
+                @include media(sm){
+                    //                    border-top: 2px solid color(Gold);
+                    //                    border-right: 2px solid color(Gold);
+                }
+            }
+        }
+    }
+}
+
+/*
+タイムライン東京
+*/
+
+#main.countryside {
+    
+    .box-labels-saigai-style{
+        display: none;
+    }
+}

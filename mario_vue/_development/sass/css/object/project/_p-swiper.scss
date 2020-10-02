@@ -1,0 +1,103 @@
+//--------------------------------------------------
+//スライダーライブラリ「swiper_5.2.0」のスタイル指定
+//ライブラリの参考：https://garigaricode.com/swiper/
+//--------------------------------------------------
+
+//-----------------------------------
+//ライブラリcssの値を上書き Start
+//-----------------------------------
+.swiper-pagination-bullet-active{
+    //background-color: getColor(accent-blue-01);
+    background-color: getColor(base-black);
+}
+//-----------------------------------
+//ライブラリcssの値を上書き End
+//-----------------------------------
+
+//「.swiper-pagination」をスライダーの外側に表示するための領域を確保
+$paginationAreaHeight: 40px;
+
+.p-swiper-container {
+    width: 100%;
+    height: 100%;
+    &--kv{
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: getSysMargin(md);
+        padding-bottom: $paginationAreaHeight;
+        // @include media(md){
+        @include media(lg){
+            //max-width: calc( #{$g_width-content} * 1.2 ); //960px x 1.2
+            max-width: $g_width-content; //960px
+        }
+    }
+}
+
+.p-swiper-slide {
+    height: auto;
+    background: getColor(base-white);
+    font-size: fz(14);
+    text-align: center;
+    &--kv{
+        width: 100%;
+        // @include media(md){
+        @include media(lg){
+            //width: $g_width-content!important;
+            max-width: $g_width-content!important;
+        }
+    }
+    &:hover{
+        background-color: getColor(gray-lighten-15);
+    }
+    &.is-active{
+        border-bottom: 2px solid getColor(accent-blue-01);
+        background-color: getColor(gray-lighten-15);
+    }
+
+    > a{
+        display: block;
+        height: 100%;
+        color: getColor(accent-blue-01);
+        text-decoration: none;
+        > span{
+            position: relative;
+            display: block;
+            top:50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            line-height: 1.4;
+            color: inherit;
+            font-weight: inherit;
+        }
+    }
+}
+
+.p-swiper-button-next,
+.p-swiper-button-prev {
+    top: auto;
+    bottom: 0;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: getColor(base-black);
+    color: getColor(base-white);
+    &::after{
+        font-size: 14px;
+        font-weight:bold;
+    }
+}
+// .p-swiper-button-next {
+//     right: 6px;
+//     @include media(md){
+//         right: 40px;
+//     }
+// }
+// .p-swiper-button-prev {
+//     left: 6px;
+//     @include media(md){
+//         left: -40px;
+//     }
+// }
+
+
+
