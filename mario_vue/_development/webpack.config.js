@@ -5,7 +5,7 @@ module.exports = (mode = "development") => {
   return {
     mode: mode,
     entry: {
-      "js/app": "./ES6/app.js"
+      "js/app": ['babel-polyfill', './es6/app.js']
     },
     output: {
       filename: "[name].bundle.js",
@@ -15,7 +15,8 @@ module.exports = (mode = "development") => {
         {
           test: /\.vue$/,
           loader: 'vue-loader',
-        },
+        }
+        ,
         {
           test: /\.scss$/,
           use: [
@@ -47,10 +48,16 @@ module.exports = (mode = "development") => {
         {
           test: /\.js$/,
           loader: "babel-loader",
-          include: [
+          /*include: [
             /es6/,
             /\/Applications\/MAMP\/htdocs\/webstaff/
-          ]
+          ],*/
+          options: {
+            presets: [
+              // プリセットを指定することで、ES2020 を ES5 に変換
+              '@babel/preset-env',
+            ]
+          }
         }
       ]
     },
