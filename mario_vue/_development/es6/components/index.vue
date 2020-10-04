@@ -93,17 +93,18 @@ export default {
             $(".clibo").addClass("cliboVic");
             let animated = document.querySelector(".cliboVic");
 
-            animated.addEventListener("animationend", () => {
+            /*animated.addEventListener("animationend", () => {
               //ゲームオーバー画面描画
               vm.gameState.result = "renderGameOver";
-            });
+            });*/
             setTimeout(() => {
               if (
                 vm.gameState.result == "gameover" &&
                 vm.gameState.result != "renderGameOver"
-              )
+              ){//ゲームオーバー画面描画
                 vm.gameState.result = "renderGameOver";
-            }, 3000);
+              }
+            }, 1000);
           }
         }
 

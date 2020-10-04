@@ -57,9 +57,9 @@ gulp.task("default", gulp.parallel(
 );
 
 gulp.task("production", gulp.parallel(
-  () => {
+  /*() => {
     return styles("production");
-  },
+  },*/
   () => {
     return scripts("production");
   }

@@ -1,4 +1,3 @@
-
 //https://qiita.com/manabuyasuda/items/5d83a5516051cc58a274
 @import "/Applications/MAMP/htdocs/webstaff/modal/v4/index.scss";
 
@@ -17,8 +16,6 @@
 @import "foundation/_f-margin";
 @import "foundation/_f-base";
 
-
-
 // ==========================================================================
 // Layout
 // ==========================================================================
@@ -28,8 +25,6 @@
 @import "layout/_l-main";
 @import "layout/_l-side";
 @import "layout/_l-body";
-
-
 
 // ==========================================================================
 // Object
@@ -60,13 +55,12 @@
 @import "object/component/_c-siteInfo";
 @import "object/component/_c-tab";
 
-
 // ------------------------------------------
 // Project
 // ------------------------------------------
 @import "object/project/_p-articles";
 @import "object/project/_p-breadcrumb";
- @import "object/project/_p-button";
+@import "object/project/_p-button";
 @import "object/project/_p-card";
 @import "object/project/_p-data";
 @import "object/project/_p-grid";
@@ -92,7 +86,6 @@
 @import "object/project/_p-corona-footer";
 @import "object/project/_p-mod_ade";
 
-
 // ------------------------------------------
 // Utility
 // ------------------------------------------
@@ -105,6 +98,3 @@
 @import "object/utility/_u-position";
 @import "object/utility/_u-text";
 @import "object/utility/_u-color";
-
-
-

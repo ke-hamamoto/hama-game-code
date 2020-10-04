@@ -1,3 +1,4 @@
+const path = require('path');
 const { VueLoaderPlugin } = require('vue-loader');
 
 module.exports = (mode = "development") => {
@@ -5,7 +6,7 @@ module.exports = (mode = "development") => {
   return {
     mode: mode,
     entry: {
-      "js/app": ['babel-polyfill', './es6/app.js']
+      "js/app": ['@babel/polyfill', './es6/app.js'],
     },
     output: {
       filename: "[name].bundle.js",
@@ -52,12 +53,12 @@ module.exports = (mode = "development") => {
             /es6/,
             /\/Applications\/MAMP\/htdocs\/webstaff/
           ],*/
-          options: {
+          /*options: {
             presets: [
               // プリセットを指定することで、ES2020 を ES5 に変換
               '@babel/preset-env',
             ]
-          }
+          }*/
         }
       ]
     },

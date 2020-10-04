@@ -33,7 +33,7 @@ const mutations = {//同期的に状態(state)の変更を管理
     },
     [SET_MARIOSTATE](state, pl) {
 
-        if (pl.__proto__.constructor.name == "MARIO") {
+        if (!state.marioState.move) {//メソッドを持つかどうか判別。
             state.marioState = pl;
         }
         else {
