@@ -1,0 +1,27 @@
+//------------------------------------------------------------
+// 汎用的なmargin付与クラスは 「_u-margin.scss」にて定義
+// 汎用的なpadding付与クラスは「_u-padding」にて定義
+//------------------------------------------------------------
+
+//余白（システムのデフォルト値）
+$_margin-xs  :  8px !default;
+$_margin-sm  : 16px !default;
+$_margin-md  : 24px !default;
+$_margin-lg  : 32px !default;
+$_margin-xl  : 40px !default;
+$_margin-xxl : 48px !default;
+$_margin-xxxl: 56px !default;
+
+
+@function  getSysMargin($_margin: sm) {
+  $_margins: (
+    'xs'  : $_margin-xs,
+    'sm'  : $_margin-sm,
+    'md'  : $_margin-md,
+    'lg'  : $_margin-lg,
+    'xl'  : $_margin-xl,
+    'xxl' : $_margin-xxl,
+    'xxxl': $_margin-xxxl
+  );
+  @return map-get($_margins, $_margin);
+}

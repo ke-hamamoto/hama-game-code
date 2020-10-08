@@ -1,0 +1,126 @@
+.p-protection {
+    border-top: 1px solid getColor(taxt-base);
+    border-bottom: 1px solid getColor(taxt-base);
+
+    @include media(md) {
+        border-top: 2px solid getColor(taxt-base);
+        border-bottom: 2px solid getColor(taxt-base);
+    }
+
+    //    Q&Aタブここから
+    .p-QandA {
+        &:not(:first-child) {
+            border-top: 1px solid #dadada;
+        }
+
+        &__q,
+        &__a {
+            display: flex;
+        }
+
+        &__q {
+            position: relative;
+            padding: 8px;
+            cursor: pointer;
+
+            @include media(md) {
+                padding: 24px;
+            }
+        }
+
+        &__a {
+            margin-top: 32px;
+
+            @include media(md) {
+                margin-top: 0px;
+            }
+        }
+
+        &__toggleIcon {
+            position: absolute;
+            display: block;
+            top: 50%;
+            right: 2%;
+            transform: translateY(-50%);
+            width: 17px;
+            height: 8px;
+        }
+
+        &__aWrap {
+            display: none;
+            padding: 0 0px 24px 8px;
+
+            @include media(md) {
+                padding: 0 24px 24px 24px;
+            }
+        }
+
+        &__icon {
+            width: 8%;
+            font-size: fz(19);
+            font-weight: bold;
+            //            line-height: 1.6;
+
+            @include media(md) {
+                font-size: fz(20);
+                width: 3.2%;
+            }
+
+        }
+
+        &__title,
+        &__text {
+            width: 92%;
+            font-size: fz(16);
+            font-weight: bold;
+            line-height: 1.6;
+            padding-right: 2em;
+
+            @include media(md) {
+                font-size: fz(16);
+                width: 96.8%;
+            }
+        }
+
+        &__text {
+            & > p:not(:first-child) {
+                margin-top: 32px;
+            }
+
+            ul {
+                margin-top: 32px;
+            }
+
+            li {
+                list-style-type: disc !important;
+                list-style:outside;
+                line-height: 1.5em;
+                margin-bottom: 10px;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+
+            a {
+                text-decoration: underline;
+            }
+
+            //aタグ
+            .mark {
+                a {
+                    padding: 4px 22px 4px 0px;
+                    background: url(../images/ico-window.png) no-repeat right 2px/15px;
+                    text-decoration: underline;
+                }
+            }
+        }
+
+    }
+}
+
+//    Q&Aタブここまで
+
+
+//    手洗いタブここから
+//    手洗いタブここまで

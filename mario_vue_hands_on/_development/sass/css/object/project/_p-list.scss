@@ -1,0 +1,241 @@
+.p-listSet {
+    .c-grid--row {
+        @include media(md) {
+            padding: 0 16px;
+        }
+    }
+
+    &__title {
+        padding: 8px 8px 8px 0px;
+        font-size: fz(24);
+        font-weight: bold;
+        border-bottom: 1px solid getColor(gray-darken-15);
+
+        @include media(md) {
+            padding: 16px;
+        }
+    }
+
+    //シャドウ
+    &--shadow {
+        @include media(md) {
+            box-shadow: $g_bShadow-all_xl;
+        }
+    }
+}
+
+
+//PC2カラム SP2カラム用
+.p-list--col-PC02-SP02 {
+    .c-list__item {
+        @include media(sm) {
+            @include getWidthAdjustedMargin(2, 6px); //（カラム数,カード間のマージン）
+        }
+
+        @include media(md) {
+            @include getWidthAdjustedMargin(2, 12px); //（カラム数,カード間のマージン）
+        }
+    }
+}
+
+//PC3カラム SP2カラム用
+.p-list--col-PC03-SP02 {
+    .c-list__item {
+        @include media(sm) {
+            @include getWidthAdjustedMargin(2, 6px); //（カラム数,カード間のマージン）
+        }
+
+        @include media(md) {
+            @include getWidthAdjustedMargin(3, 12px); //（カラム数,カード間のマージン）
+        }
+    }
+}
+
+//PC4カラム SP2カラム用
+.p-list--col-PC04-SP02 {
+    .c-list__item {
+        @include media(sm) {
+            @include getWidthAdjustedMargin(2, 6px); //（カラム数,カード間のマージン）
+        }
+
+        @include media(md) {
+            @include getWidthAdjustedMargin(4, 12px); //（カラム数,カード間のマージン）
+        }
+    }
+}
+
+
+//-------------------
+// TOP Check リスト
+//-------------------
+.p-top-checkList {
+    //ul
+    margin-top: 0;
+
+    @include media(md) {
+        width: 720px;
+        margin: 0 auto;
+    }
+
+    &__item {
+        //li
+        position: relative;
+        display: inline-block;
+        margin: 12px 0 0 60px;
+        line-height: 1.4;
+        font-size: fz(16);
+        font-weight: bold;
+
+        @include media(md) {
+            display: block;
+            //            width: 520px;
+            //            margin-right: auto;
+            //            margin-left: auto;
+        }
+
+        &:first-child {
+            margin-top: 0;
+        }
+
+        a {
+            position: relative;
+            color: getColor(text-base);
+            border-bottom: 1px solid getColor(text-base);
+
+            &:hover {
+                text-decoration: none;
+                border-bottom: none;
+            }
+        }
+
+        &.ico-check {
+            &::before {
+                content: "Check";
+                position: absolute;
+                top: 4px;
+                left: -66px;
+                display: block;
+                width: 50px;
+                height: 16px;
+                color: #fff;
+                font-size: fz(12);
+                font-weight: bold;
+                text-align: center;
+                line-height: 16px;
+                background-color: #D26100;
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 4px;
+                left: -16px;
+                display: block;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 16px 0 0 12px;
+                border-color: transparent transparent transparent #d26200;
+            }
+
+            &.new {
+                &::before {
+                    content: "New";
+                }
+            }
+        }
+    }
+}
+
+
+//-------------------
+// knowledge リスト
+//-------------------
+
+.p-list-line {
+    position: relative;
+
+    //ul
+    &::before {
+        content: "";
+        position: absolute;
+        top: -16px;
+        left: 13px;
+        display: block;
+        width: 4px;
+        height: 103%;
+        background-color: getColor(main-01);
+
+    }
+
+    &__item {
+        //li
+        position: relative;
+        margin-top: 20px;
+        margin-left: 42px;
+        line-height: 1.4;
+
+        a {
+            padding-bottom: 2px;
+            color: #555;
+            border-bottom: 2px solid getColor(main-01);
+
+            > span {
+                font-size: fz(16);
+                font-weight: bold;
+            }
+
+            &:hover {
+                text-decoration: none;
+                border-bottom: none;
+            }
+
+            &.u-fa-bg {
+                &--caret {
+                    padding-right: 16px;
+
+                    &::before {
+                        font-size: 24px;
+                        bottom: -2px;
+                    }
+                }
+            }
+            /* Edge(EdgeHTML) & IE11 & IE10 */
+            _:-ms-lang(x), &.u-fa-bg--caret{
+                &::before{
+                    bottom: 0px;
+                }
+            }
+
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 9px;
+            left: -26px;
+            display: block;
+            width: 21px;
+            height: 4px;
+            background-color: getColor(main-01);
+        }
+
+        &:last-child {
+            &::before {
+                left: -29px;
+                width: 24px;
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 13px;
+                left: -30px;
+                display: block;
+                width: 6px;
+                height: 100%;
+                background-color: #fff;
+            }
+        }
+    }
+}

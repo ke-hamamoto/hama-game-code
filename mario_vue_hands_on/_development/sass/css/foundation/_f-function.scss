@@ -1,0 +1,13 @@
+/**
+元画像のアスペクト比を維持したまま背景画像をリサイズして表示させる
+@param {$img} 画像のurl
+@param {$img-w} 画像の横幅（px単位付きで指定）
+@param {$img-h} 画像の高さ（px単位付きで指定）
+@param {$disp-w} [100%] 表示したい画像のサイズ
+@note 特になし
+*/
+@function getImgResizeRatioHeight($img-w, $img-h, $disp-w:100%){
+  //position: relative;
+  @return $img-h / $img-w * $disp-w;
+
+}

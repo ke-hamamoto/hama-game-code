@@ -1,0 +1,79 @@
+
+//動画
+.c-movie {
+    position: relative;
+    width: 100%;
+    height: 0;
+    margin-right: auto;
+    margin-left: auto;
+    padding-bottom: 56.25%;
+    @include media(md){
+        width: $g_width-img;
+        height: calc(#{$g_width-img} * 0.5625);
+    }
+    &--freeSize{
+       @include media(md){
+            width: 100%;
+            height: 0;
+        }
+    }
+    &--right{
+       margin-right: 0;
+    }
+    &--left{
+      margin-left: 0;
+    }
+    &--max{
+      @include media(md){
+        max-width: none;
+      }
+    }
+    > iframe{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    // img{
+    //    width: 100%;
+    // }
+
+    //文章中の動画
+    &--article{
+        margin-top: getSysMargin(sm);
+        @include media(md){
+            margin-top: getSysMargin(md);
+            padding-bottom: 0;
+        }
+    }
+}
+
+/*
+防災アプリmovie枠 設定
+*/
+// .content--detail-main .playerWrapper {
+//   width: 100%;
+//   overflow: hidden;
+// }
+
+// .content--thumb.tmpl_video {
+//   text-align: center;
+// }
+
+// .border_double {
+//   border-style: double !important;
+//   border-width: 4px !important;
+// }
+
+// .content--thumb.tmpl_video.is_top,
+// .content--thumb.tmpl_video.is_middle {
+//   margin-bottom: 16px !important;
+// }
+
+// .content--thumb.tmpl_video.is_bottom {
+//   margin-bottom: 40px !important;
+// }
+
+/* ----- movie設定 end ----- */

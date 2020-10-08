@@ -1,0 +1,78 @@
+//--------------------------------------
+// knowledge
+//--------------------------------------
+
+.p-knowledge-category__wrap{
+    margin-top: 32px;
+
+    @include media(md) {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 0px;
+    }
+}
+.p-knowledge-category{
+    margin-top: 36px;
+    @include media(md) {
+        margin-top: 44px;
+        &:nth-child(-n+3){
+            margin: 0px;
+        }
+    }
+    &.corona{
+        @include media(sm) {
+            margin-top: 0px;
+        }
+    }
+
+    @include media(md) {
+        width: calc(960px / 3);
+    }
+
+    &__title{
+        //h2
+        font-size: fz(20);
+        &.work-life{
+            background: url('../images/ico-knowledge_work-life.png') no-repeat left center/32px;
+            padding-left: 38px;
+
+            @include media(md) {
+                padding: 6px 0 0 38px;
+            }
+        }
+        &.school{
+            background: url(../images/ico-knowledge_school.png) no-repeat left center/31px;
+            padding: 6px 0 0 38px;
+        }
+        &.corona{
+            background: url('../images/ico-knowledge_corona.png') no-repeat left center/32px;
+            padding: 4px 0 0 38px;
+
+            @include media(md) {
+                padding: 6px 0 0 38px;
+            }
+        }
+        &.expert{
+            background: url('../images/ico-knowledge_expert.png') no-repeat left center/32px;
+            padding-left: 38px;
+        }
+        &.nhk{
+            background: url('../images/ico-knowledge_nhk.jpg') no-repeat left center/32px;
+            padding-left: 38px;
+        }
+        &.information{
+            background: url('../images/ico-knowledge_information.png') no-repeat left center/32px;
+            padding-left: 38px;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+

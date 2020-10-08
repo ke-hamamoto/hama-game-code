@@ -1,0 +1,139 @@
+//トランジションの基本設定とイージングパターンを組み合わせて
+//トランジションパターンを定義する
+
+
+/**
+トランジションの基本設定（トランジションパターン作成用）
+@param {$property} 対象のプロパティ
+@param {$duration} 時間（px単位付きで指定）
+@param {$delay} 　 遅延（px単位付きで指定）
+@note 特になし
+*/
+@mixin transition-base($property:all, $duration:1s, $delay:0s){
+    transition-property: $property;
+    transition-duration: $duration;
+    transition-delay: $delay;
+}
+
+
+//------------------------------------------
+//イージングパターン
+//------------------------------------------
+@mixin ease-in-sine(){
+    transition-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+}
+ 
+@mixin ease-out-sine(){
+    transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+ 
+@mixin ease-in-out-sine(){
+    transition-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+ 
+@mixin ease-in-quad(){
+    transition-timing-function: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+}
+ 
+@mixin ease-out-quad(){
+    transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+ 
+@mixin ease-in-out-quad(){
+    transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+ 
+@mixin ease-in-cubic(){
+    transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+ 
+@mixin ease-out-cubic(){
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+ 
+@mixin ease-in-out-cubic(){
+    transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+ 
+@mixin ease-in-quart(){
+    transition-timing-function: cubic-bezier(0.895, 0.03, 0.685, 0.22);
+}
+ 
+@mixin ease-out-quart(){
+    transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+ 
+@mixin ease-in-out-quart(){
+    transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
+}
+ 
+@mixin ease-in-quint(){
+    transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+}
+ 
+@mixin ease-out-quint(){
+    transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+}
+ 
+@mixin ease-in-out-quint(){
+    transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
+}
+ 
+@mixin ease-in-expo(){
+    transition-timing-function: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+}
+ 
+@mixin ease-out-expo(){
+    transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+}
+ 
+@mixin ease-in-out-expo(){
+    transition-timing-function: cubic-bezier(1, 0, 0, 1);
+}
+ 
+@mixin ease-in-circ(){
+    transition-timing-function: cubic-bezier(0.6, 0.04, 0.98, 0.335);
+}
+ 
+@mixin ease-out-circ(){
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+ 
+@mixin ease-in-out-circ(){
+    transition-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+ 
+@mixin ease-in-back(){
+    transition-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+ 
+@mixin ease-out-back(){
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+ 
+@mixin ease-in-out-back(){
+    transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+
+
+//------------------------------------------
+//トランジションパターン
+//------------------------------------------
+@mixin transition_quiq(){
+    @include transition-base(all, 0.3s, 0s);
+    transition-timing-function: ease-out;
+}
+
+@mixin transition-nomal(){
+    @include transition-base(all, 0.5s, 0s);
+    transition-timing-function: ease-out;
+}
+
+@mixin transition_slow(){
+    @include transition-base(all, 0.6s, 0s);
+    transition-timing-function: ease-out;
+}
+
+
+

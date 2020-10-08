@@ -1,0 +1,418 @@
+.c-button-wrap {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: getSysMargin(md);
+  //    padding-bottom: getSysMargin(md);
+
+  // &--full{
+  //   width: 100%;
+  // }
+  &--small {
+    @include media(md) {
+      width: 240px;
+    }
+
+    &.right {
+      margin-right: inherit;
+      margin-left: auto;
+    }
+
+    &.left {
+      margin-right: auto;
+      margin-left: inherit;
+    }
+
+    &.center {
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    .c-button {
+      padding: 12px;
+    }
+  }
+
+  &--middle {
+    @include media(md) {
+      //width: 320px;
+      width: 352px;
+    }
+  }
+
+  &--large {
+    @include media(md) {
+      width: 480px;
+    }
+  }
+
+  &--inline {
+    display: inline-block;
+
+    @include media(md) {
+      margin-right: getSysMargin(md);
+      margin-left: getSysMargin(md);
+    }
+  }
+
+  //------------------------------
+  //hover設定
+  //------------------------------
+  &:hover {
+    .c-button--outline-black {
+      border: 1px solid getColor(accent-01);
+    }
+
+    .c-button {
+      transition: all 0.5s;
+    }
+
+    .c-button__label {
+      transition: all 0.5s;
+    }
+
+    .c-button__icon--lineArrowBtm {
+      opacity: 1;
+      color: getColor(text-base);
+
+      &::before {
+        border-top: 2px solid getColor(text-base);
+        border-right: 2px solid getColor(text-base);
+        transition: all 0.5s;
+      }
+    }
+  }
+
+  a:hover,
+  a:active {
+    text-decoration: none;
+  }
+}
+
+.c-button {
+  position: relative;
+  display: block;
+  padding: 10px 8px;
+  text-align: center;
+  font-size: fz(16);
+  line-height: 1.4;
+  //line-height: 1.2;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.5s;
+
+  @include media(md) {
+    padding: getSysMargin(sm);
+  }
+
+  .fas {
+    &.leftSide {
+      margin-right: 8px;
+    }
+
+    &.rightSide {
+      margin-left: 8px;
+    }
+  }
+
+  // &--shaped{
+  //   border-radius: 18px;
+  // }
+  // &--wide{
+  //   width: 85%;
+  //   @include media(md){
+  //     width: 30%;
+  //   }
+  // }
+
+  //------------------------------
+  //枠線ボタン
+  //------------------------------
+  &--outline-black,
+  &--outline-gray {
+    border-width: 1px;
+    border-style: solid;
+  }
+
+  &--outline-black {
+    border-color: getColor(base-black);
+    transition: all 0.5s;
+  }
+
+  &--outline-gray {
+    border-color: getColor(accent-gray);
+  }
+
+  //------------------------------
+  //塗りつぶしボタン
+  //------------------------------
+  &--fill-black {
+    background-color: getColor(base-black);
+  }
+
+  &--fill-text-black {
+    background-color: getColor(text-base);
+  }
+
+  //メインカラー01
+  &--fill-main-01 {
+    background-color: getColor(main-01);
+  }
+
+  //メインカラー02
+  &--fill-main-02 {
+    background-color: getColor(main-02);
+  }
+
+  //メインカラー03
+  &--fill-main-03 {
+    background-color: getColor(main-03);
+
+    &:hover {
+      background-color: getColor(main-01);
+    }
+  }
+
+  //サブカラー01
+  &--fill-accent-01 {
+    background-color: getColor(accent-01);
+
+    &:hover {
+      background-color: getColor(accent-03);
+    }
+  }
+
+  //サブカラー02
+  &--fill-accent-02 {
+    background-color: getColor(accent-02);
+  }
+
+  //サブカラー03
+  &--fill-accent-03 {
+    background-color: getColor(accent-03);
+  }
+
+  //サブカラー04
+  &--fill-accent-gray {
+    background-color: getColor(accent-gray);
+
+    &:hover {
+      background-color: getColor(gray-darken-20);
+    }
+  }
+
+  //サブカラー05
+  &--fill-accent-05 {
+    background-color: getColor(accent-blue-02);
+
+    &:hover {
+      background-color: getColor(accent-blue-03);
+    }
+  }
+
+  //------------------------------
+  //角丸ボタン
+  //------------------------------
+  &--shaped {
+    border-radius: $g_radius-xs;
+  }
+
+  //------------------------------
+  //アイコン
+  //------------------------------
+  &__icon {
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    font-size: inherit;
+    line-height: inherit;
+    color: getColor(text-base);
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: getSysMargin(sm);
+      transform: translateY(-50%);
+      font-size: inherit;
+      line-height: 1;
+    }
+
+    &--white {
+      &::before {
+        color: getColor(base-white);
+      }
+    }
+
+    //右寄せ（デフォルトは左寄せ）
+    &--right {
+      &::before {
+        left: auto;
+        right: getSysMargin(sm);
+      }
+    }
+
+    //∨
+    &--lineArrowBtm {
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 4%;
+        right: -26px;
+        width: 10px;
+        height: 10px;
+        border-top: 2px solid getColor(text-base);
+        border-right: 2px solid getColor(text-base);
+        transform: rotate(135deg);
+        transition: all 0.5s;
+      }
+    }
+
+    //▶
+    &--arrow-01 {
+      &::before {
+        content: "\025b6";
+      }
+    }
+
+    //◀
+    &--arrow-02 {
+      &::before {
+        content: "\025c0";
+      }
+    }
+
+    //▲
+    &--arrow-03 {
+      &::before {
+        content: "\025b2";
+      }
+    }
+
+    //▼
+    &--arrow-04 {
+      &::before {
+        content: "\025bc";
+      }
+    }
+
+    //●
+    &--circle {
+      &::before {
+        content: "\025cf";
+      }
+    }
+
+    //×
+    &--cross {
+
+      //&::before {content: "\0d7";}
+      &::before {
+        content: "\02715";
+      }
+
+      //font-size: 1.2em;
+      font-weight: bold;
+    }
+
+    &--crossMove {
+      //×回転
+      position: relative;
+
+      &::before,
+      &:after {
+        content: "";
+        position: absolute;
+        top: 44%;
+        right: -32px;
+        width: 14px;
+        height: 2px;
+        background-color: getColor(accent-01);
+        transition: all 0.5s;
+      }
+
+      &::after {
+        top: 19.5%;
+        right: -26px;
+        width: 2px;
+        height: 14px;
+        transform: rotate(180deg);
+        transition: all 0.5s;
+      }
+    }
+
+    //÷
+    &--plus {
+      &::before {
+        content: "\0247";
+      }
+    }
+
+    //–
+    &--minus {
+      &::before {
+        content: "\096";
+      }
+    }
+  }
+
+  //------------------------------
+  //ボタンのテキスト
+  //------------------------------
+  &__label {
+    display: inline-block;
+    font-size: inherit;
+    font-weight: bold;
+    line-height: inherit;
+    color: getColor(text-base);
+    transition: all 0.5s;
+
+    &--white {
+      color: getColor(base-white);
+    }
+
+    &--black {
+      color: getColor(text-base);
+    }
+
+    &--main01 {
+      color: getColor(main-01);
+    }
+
+    &--txt24 {
+      font-size: 24px;
+
+      @include media(sm) {
+        font-size: fz(20);
+      }
+    }
+
+    &--txt24_s {
+      font-size: 24px;
+
+      @include media(sm) {
+        font-size: fz(17);
+      }
+    }
+  }
+
+  //ボタン開閉時の＋アイコンアクション
+  &.is-open {
+    span {
+      &::after {
+        top: 9%;
+        right: -26px;
+        background-color: getColor(accent-01);
+        transform: rotate(90deg);
+        transition: all 0.5s;
+      }
+    }
+  }
+}
+
+//https://liginc.co.jp/280820

@@ -1,0 +1,11 @@
+.c-time{
+    display:block;
+    font-size: fz(16);
+    color: getColor(base-black);
+    &--right{
+        text-align: right;
+    }
+    &--center{
+        text-align: center;
+    }
+}

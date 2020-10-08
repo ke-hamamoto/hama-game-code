@@ -1,0 +1,94 @@
+.u-only-xs{
+  display: none;
+  @include media(xs){
+    display: block;
+  }
+  &--inline{
+    display: none;
+    @include media(xs){
+      display: inline-block;
+    }
+  }
+  &--flex{
+    display: none;
+    @include media(xs){
+      display: flex;
+    }
+  }
+}
+
+.u-only-sm{
+  display: none;
+  @include media(sm){
+    display: block;
+  }
+  &--inline{
+    display: none;
+    @include media(sm){
+      display: inline-block;
+    }
+  }
+  &--flex{
+    display: none;
+    @include media(sm){
+      display: flex;
+    }
+  }
+}
+
+.u-only-md{
+  display: none;
+  @include media(md){
+    display: block;
+  }
+  &--inline{
+    display: none;
+    @include media(md){
+      display: inline-block;
+    }
+  }
+  &--flex{
+    display: none;
+    @include media(md){
+      display: flex;
+    }
+  }
+}
+
+.u-only-lg{
+  display: none;
+  @include media(lg){
+    display: block;
+  }
+  &--inline{
+    display: none;
+    @include media(lg){
+      display: inline-block;
+    }
+  }
+  &--flex{
+    display: none;
+    @include media(lg){
+      display: flex;
+    }
+  }
+}
+
+.u-only-xl{
+  display: none;
+  @include media(xl){
+    display: block;
+  }
+  &--inline{
+    display: none;
+    @include media(xl){
+      display: inline-block;
+    }
+  }
+  &--flex{
+    display: none;
+    @include media(xl){
+      display: flex;
+    }
+  }
+}

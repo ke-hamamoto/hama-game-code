@@ -1,0 +1,17 @@
+.p-article-text {
+.position-r{
+position: relative;
+cursor:pointer;
+text-align: center;
+border-radius: 4px;
+}
+.toggleIcon {
+position: absolute;
+display: block;
+top: 0px;
+right: 30px;
+transform: translateY(250%);
+width: 17px;
+height: 8px;
+}
+}

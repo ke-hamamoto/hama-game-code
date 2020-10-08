@@ -1,0 +1,58 @@
+//カラーコード取得
+@function getColor($color) {
+    $colors:(
+        // サイトカラー
+        main-01: #4e738e, //メインカラー01
+        main-02: #2d2d2d, //メインカラー02
+        main-03: #2a506b, //メインカラー03
+        accent-01: #cc5500, //サブカラー01
+        accent-02: #d6e7ed, //サブカラー02
+        accent-03: #eb9c03, //サブカラー03
+        accent-blue-01: #1d2733,
+        accent-blue-02: #0087d2, //NHKブルー
+        accent-blue-03: #239ee0,
+        accent-yellow-01: #fff732,
+        accent-yellow-02: #ffdf87,
+        accent-yellow-03: #ffe732,
+        accent-beige-01: #f5f2e6,
+
+        accent-gray: #6c6c6c,
+        accent-gray-01: #888888,
+        accent-gray-02: #BBBBBB,
+        
+        base-white: #fff,
+        base-black: #000,
+
+        //テキスト
+        text-base: #2d2d2d,
+        text-light: #fff,
+
+
+        //背景
+        back-ground: #0a131a, //背景
+        back-ground-mv: #000000, //MVの背景
+
+        //グレー
+        base-gray: #c4c4c4,
+        gray-lighten-5: lighten(#c4c4c4, 5%),   //#d1d1d1
+        gray-lighten-10: lighten(#c4c4c4, 10%), //#dddddd
+        gray-lighten-15: lighten(#c4c4c4, 15%), //#eaeaea
+        gray-lighten-20: lighten(#c4c4c4, 20%), //#f7f7f7
+        gray-darken-5: darken(#c4c4c4, 5%),     //#b7b7b7
+        gray-darken-10: darken(#c4c4c4, 10%),   //#aaaaaa
+        gray-darken-15: darken(#c4c4c4, 15%),   //#9e9e9e
+        gray-darken-20: darken(#c4c4c4, 20%),   //#919191
+
+        //支持率
+        support-rate-red: #9c2323, //支持
+        support-rate-blue: #142484, //不支持
+
+        // リンクカラー
+        link: #045e8c,
+        link-visited: #38225F,
+        link-hover: lighten(#045e8c, 15%)
+
+    ) !default;
+
+    @return map-get($colors,$color);
+}

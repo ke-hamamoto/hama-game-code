@@ -1,0 +1,85 @@
+
+//背景カラーを指定
+.u-color {
+    &--main-01 {
+        background-color: getColor(main-01);
+    }
+    &--main-02 {
+        background-color: getColor(main-02);
+    }
+    &--main-03 {
+        background-color: getColor(main-03);
+    }
+    &--accent-01 {
+        background-color: getColor(accent-01);
+    }
+    &--accent-02 {
+        background-color: getColor(accent-02);
+    }
+    &--accent-blue-01 {
+        background-color: getColor(accent-blue-01);
+    }
+    &--accent-blue-02 {
+        background-color: getColor(accent-blue-02);
+    }
+    &--accent-yellow-01 {
+        background-color: getColor(accent-yellow-01);
+    }
+    &--accent-yellow-02 {
+        background-color: getColor(accent-yellow-02);
+    }
+    &--accent-yellow-03 {
+        background-color: getColor(accent-yellow-03);
+    }
+    &--accent-gray {
+        background-color: getColor(accent-gray);
+    }
+    &--base-white {
+        background-color: getColor(base-white);
+    }
+    &--base-black {
+        background-color: getColor(base-black);
+    }
+    &--back-ground {
+        background-color: getColor(back-ground);
+    }
+    &--back-ground-mv {
+        background-color: getColor(back-ground-mv);
+    }
+    &--base-gray {
+        background-color: getColor(base-gray);
+    }
+}
+
+.u-color-text {
+    &--red {
+        color:red;
+    }
+    &--white {
+        color:white;
+    }
+    &--black {
+        color:#333;
+    }
+}
+
+
+//座布団
+.u-boxBg{
+    padding: 12px;
+    &.lblue{
+        background-color: #dbf7ff;
+    }
+    &.lred{
+        background-color: #ffdbdb;
+    }
+    &.lyellow{
+        background-color: #fff9db;
+    }
+    &.lgray{
+        background-color: #ececec;
+    }
+    &.lgreen{
+        background-color: #e2ffe1;
+    }
+}

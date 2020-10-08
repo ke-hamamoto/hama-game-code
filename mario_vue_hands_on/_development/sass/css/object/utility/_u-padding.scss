@@ -1,0 +1,21 @@
+$num: 4;
+@for $i from 0 through 20 {
+    .u-pt#{$i * $num} {padding-top: #{$i * $num}px !important;}
+    .u-pr#{$i * $num} {padding-right: #{$i * $num}px !important;}
+    .u-pb#{$i * $num} {padding-bottom: #{$i * $num}px !important;}
+    .u-pl#{$i * $num} {padding-left: #{$i * $num}px !important;}
+    .u-pAll#{$i * $num} {padding: #{$i * $num}px !important;}
+
+    //--------------------------------------------------
+    //メディアクエリごとの設定
+    //--------------------------------------------------
+    @each $key, $value in $_breakpoints {
+        @include media(#{$key}){
+            .u-pt#{$i * $num}--#{$key} {padding-top: #{$i * $num}px !important;}
+            .u-pr#{$i * $num}--#{$key} {padding-right: #{$i * $num}px !important;}
+            .u-pb#{$i * $num}--#{$key} {padding-bottom: #{$i * $num}px !important;}
+            .u-pl#{$i * $num}--#{$key} {padding-left: #{$i * $num}px !important;}
+            .u-pAll#{$i * $num}--#{$key} {padding: #{$i * $num}px !important;}
+        }
+    }
+}

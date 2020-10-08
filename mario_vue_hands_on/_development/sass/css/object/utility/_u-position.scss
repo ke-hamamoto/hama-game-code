@@ -1,0 +1,42 @@
+//--------------------------------------------------
+//「position」プロパティを設定
+//--------------------------------------------------
+.u-pos-sta{
+    position: static;
+}
+.u-pos-rel{
+    position: relative;
+}
+.u-pos-abs{
+    position: absolute;
+}
+.u-pos-fix{
+    position: fixed;
+}
+
+
+//--------------------------------------------------
+//メディアクエリごとの「position」プロパティを設定
+//--------------------------------------------------
+@each $key, $value in $_breakpoints {
+    .u-pos-sta--#{$key}{
+        @include media(#{$key}){
+            position: static;
+        }
+    }
+    .u-pos-rel--#{$key}{
+        @include media(#{$key}){
+            position: relative;
+        }
+    }
+    .u-pos-abs--#{$key}{
+        @include media(#{$key}){
+            position: absolute;
+        }
+    }
+    .u-pos-fix--#{$key}{
+        @include media(#{$key}){
+            position: fixed;
+        }
+    }
+}

@@ -1,0 +1,462 @@
+/* --------------------
+モーダルウィンドウの設定（Modal_v3.0_TimeLine.cssの上書）
+-------------------- */
+
+/* 背景（上書き） */
+.modalLayerBg {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* 外枠 */
+.modalLayer02.modal-news-frame {
+    width: 80%;
+    max-width: 720px;
+
+    @include media(sm) {
+        width: 94%;
+    }
+}
+
+#news--modal.modalArea {
+    position: relative;
+    padding: 0 0px 26px;
+    border-top: 10px solid #fff;
+    border-bottom: 10px solid #fff;
+
+    @include media(sm) {
+        padding: 0 0 32px 0;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+
+    .videoFrame {
+        width: 100%;
+        max-width: inherit;
+    }
+
+    .modalAreaInner {
+        padding: 40px 40px 60px;
+
+        @include media(sm) {
+            padding: 24px 12px 0;
+        }
+
+        .body_mov--w640 {
+            width: 640px;
+            height: 360px;
+            position: relative;
+            margin-right: auto;
+            margin-left: auto;
+            margin-bottom: 32px;
+
+            @include media(sm) {
+                width: 100%;
+                height: 0;
+                padding-bottom: 56.25%;
+            }
+
+            iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+    }
+
+    .headWrap {
+        @include media(sm) {
+            margin-top: -10px;
+            margin-bottom: 24px;
+        }
+    }
+
+    .news--modal--time {
+        margin-bottom: 32px;
+
+        @include media(sm) {
+            margin-bottom: 16px;
+        }
+
+        time {
+            color: #999;
+            margin: 0;
+        }
+    }
+
+    h2 {
+        margin: -10px 0 24px 0;
+        text-align: left;
+
+        span {
+            font-size: fz(28);
+
+            @include media(sm) {
+                font-size: fz(24);
+            }
+        }
+    }
+
+    h3 {
+        line-height: 1.4;
+        margin-top: 32px;
+        padding: 8px 8px 8px 12px;
+        border-left: 6px solid getColor(main-01);
+
+        @include media(sm) {
+            padding: 4px 0px 4px 12px;
+            margin-top: 36px;
+        }
+
+        span {
+            font-size: fz(24);
+
+            @include media(sm) {
+                font-size: fz(22);
+            }
+        }
+    }
+
+    h4 {
+        margin-top: 24px;
+        margin-bottom: 12px;
+        padding-bottom: 8px;
+        font-size: fz(20);
+        font-weight: bold;
+        line-height: 1.4;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+
+        @include media(sm) {
+            margin-bottom: 24px;
+        }
+    }
+
+    #news--modal--lead {
+        margin-bottom: 2em;
+    }
+
+    .item_imageText {
+        display: flex;
+        margin: 24px 0 0 0;
+
+        @include media(sm) {
+            flex-direction: column-reverse;
+        }
+
+        .info {
+            flex-basis: 50%;
+            margin: 0 16px 0 0;
+
+            @include media(sm) {
+                margin: 16px 0 0 0;
+            }
+        }
+
+        .image {
+            flex-basis: 50%;
+        }
+    }
+
+    &.link {
+        .headWrap {
+            background: none;
+            background-color: #efefef;
+
+            @include media(sm) {
+                background: none;
+                background-color: #efefef;
+            }
+
+            .movie-title {
+                //h3
+                position: absolute;
+                top: 50%;
+                left: 28px;
+                line-height: 1.4;
+                margin-top: 0px;
+                margin-bottom: 0;
+                padding: 0px;
+                font-size: 20px;
+                font-weight: bold;
+                border-left: none;
+                transform: translate(0, -50%);
+
+                @include media(sm) {
+                    position: inherit;
+                    top: inherit;
+                    left: inherit;
+                    margin-top: 0px;
+                    padding: 16px;
+                    transform: none;
+                }
+            }
+        }
+    }
+}
+
+
+/*
+最新ニュース以外のモーダル用
+*/
+#news--modal.modalArea.no-news {
+    .modalAreaInner {
+        padding: 40px 40px 60px;
+
+        @include media(sm) {
+            padding: 12px 12px 60px;
+        }
+    }
+
+
+    .head {
+        margin-top: 24px;
+        font-weight: bold;
+        line-height: 1.6;
+    }
+
+    .head-3 {
+        //h3
+        font-size: fz(24);
+        margin-bottom: 36px;
+
+        @include media(sm) {
+            margin-bottom: 24px;
+        }
+    }
+
+    .head-4 {
+        //h4
+        font-size: fz(21);
+        margin-bottom: 16px;
+
+        @include media(sm) {
+            margin-bottom: 24px;
+        }
+    }
+
+    .news--modal--img {
+        .caption {
+            //figcaption
+            margin: 8px 4px;
+            line-height: 1.6;
+
+            @include media(sm) {
+                text-align: left;
+            }
+        }
+    }
+}
+
+
+/* 外枠 シャドウ */
+.modalLayer01 {
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 20px 0px;
+
+    @include media(sm) {
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 10px 0px;
+    }
+}
+
+
+/*
+閉じるボタン
+*/
+.modalLayer02.modal-news-frame {
+    .modalClose__Wrapper {
+        width: 100%;
+        //        padding-top: 32px;
+        text-align: center;
+        border-top: 2px solid rgba(0, 0, 0, 0.1);
+
+        @include media(sm) {
+            margin-top: 64px;
+            padding-right: 12px;
+            padding-left: 12px;
+        }
+    }
+
+    .modalClose {
+        //右上丸型 ＆ ページ下部共通
+        background-color: getColor(text-base);
+
+        @include media(sm) {
+            width: 32px;
+            height: 32px;
+            top: -15px;
+            right: -9px;
+            bottom: 100px;
+            padding: 0 10px;
+            border-radius: 50%;
+        }
+
+        &.textBtn {
+            //ページ下部共通
+            @include marginRL;
+            position: relative;
+            top: inherit;
+            left: inherit;
+            right: inherit;
+            bottom: inherit;
+            width: 100%;
+            height: 48px;
+            padding: 16px;
+            box-shadow: none;
+            //            background-color: #fff;
+
+            @include media(sm) {
+                margin-top: 0px;
+                width: 100%;
+                border-radius: 4px;
+            }
+
+            &.c-button--shaped {
+                border-radius: $g_radius-xs;
+            }
+
+            &.c-button--fill-text-black {
+                border-radius: $g_radius-xs;
+            }
+        }
+
+        .spBtn {
+            @include media(sm) {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 33px;
+                height: 37px;
+                transform: translate(-50%, -50%);
+
+                img {
+                    width: 100%;
+                }
+            }
+        }
+
+        &.button {
+            &:hover {
+                background-color: #fff;
+
+                .modalClose__text {
+
+                    //span
+                    .fas {
+                        color: getColor(main-02);
+                        transition: all 0.5s;
+                    }
+                }
+            }
+        }
+    }
+
+    .modalClose__text {
+        .fas {
+            margin-right: 12px;
+            color: getColor(main-01);
+            transition: all 0.5s;
+        }
+    }
+}
+
+
+
+/* --------------------
+モーダルウィンドウのカスタマイズ設定
+// 使用箇所（年表）
+-------------------- */
+.modalLayerBg {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modalLayer02 {
+    &.customModal {
+        width: 94%;
+
+        .modalArea {
+            padding: 14px 16px 20px;
+
+            @include media(md) {
+                padding: 30px 30px 40px;
+            }
+        }
+
+        #modal-time {
+            time {
+                font-size: fz(14);
+                color: #888;
+            }
+        }
+
+        #modal-title {
+            position: relative;
+            margin-top: 20px;
+
+            h2 {
+                font-size: fz(20);
+
+                &::before {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    left: -16px;
+                    width: 4px;
+                    height: 100%;
+                    background-color: #4d728c;
+                }
+            }
+        }
+
+        #modal-img {
+            margin-top: 24px;
+        }
+
+        #modal-lead {
+            & > p {
+                margin-top: 20px;
+                font-size: fz(16);
+            }
+        }
+
+        .c-button {
+            margin-top: 24px;
+        }
+
+        .c-button--outline-black {
+            &:hover {
+                border: 1px solid #d26200;
+            }
+        }
+
+        .modalClose {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            top: 12px;
+            right: 12px;
+            border: 1px solid rgba(0, 0, 0, 1);
+            border-radius: 4px;
+            box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.4);
+            background: #fff url('/news/special/coronavirus/chronology/images/ico-close.png') no-repeat center center/14px;
+            cursor: pointer;
+            color: #fff;
+            transition: all 0.3s;
+
+            &:hover {
+                background-color: #4d728c;
+                background-image: url('/news/special/coronavirus/chronology/images/ico-close_on.png');
+                border: 1px solid #4d728c;
+            }
+
+            img{
+                display: none;
+            }
+        }
+
+    }
+}
